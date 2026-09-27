@@ -62,7 +62,7 @@ const generateStudents = (count) => {
     const cgpa = parseFloat((6.0 + Math.random() * 4).toFixed(2));
 
     students.push({
-      studentCode: `STU${String(2024001 + i).padStart(7, "0")}`,
+      studentCode: `STU${String(2024002 + i).padStart(7, "0")}`,
       fullName,
       email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}${i}@college.edu`,
       phone: `98${String(Math.floor(Math.random() * 100000000)).padStart(8, "0")}`,
@@ -317,14 +317,16 @@ const seed = async () => {
     await sequelize.sync({ alter: true });
 
     console.log("📋 Clearing existing data...");
+    await sequelize.query("SET FOREIGN_KEY_CHECKS = 0;");
     // Clear in reverse order of dependencies
-    await Placement.destroy({ where: {}, truncate: true, cascade: true });
-    await Interview.destroy({ where: {}, truncate: true, cascade: true });
-    await Application.destroy({ where: {}, truncate: true, cascade: true });
-    await Job.destroy({ where: {}, truncate: true, cascade: true });
-    await Student.destroy({ where: {}, truncate: true, cascade: true });
-    await Company.destroy({ where: {}, truncate: true, cascade: true });
-    await User.destroy({ where: {}, truncate: true, cascade: true });
+    await Placement.destroy({ where: {}, truncate: true });
+    await Interview.destroy({ where: {}, truncate: true });
+    await Application.destroy({ where: {}, truncate: true });
+    await Job.destroy({ where: {}, truncate: true });
+    await Student.destroy({ where: {}, truncate: true });
+    await Company.destroy({ where: {}, truncate: true });
+    await User.destroy({ where: {}, truncate: true });
+    await sequelize.query("SET FOREIGN_KEY_CHECKS = 1;");
 
     // ─── 1. Create Admin User ─────────────────────────────────────────────
     console.log("👤 Creating demo users...");
