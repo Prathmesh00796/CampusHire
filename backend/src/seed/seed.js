@@ -179,7 +179,7 @@ const seed = async () => {
       graduationYear: 2025,
       cgpa: 7.54, // Real CGPA from DKTE sheet
       backlogs: 0,
-      skills: ["Python", "SQL", "React", "Machine Learning", "Git", "Java"],
+      skills: ["Python", "SQL", "React", "Machine Learning", "Git", "Java", "JavaScript"],
     });
     console.log(`   ✅ Demo Student created: ${demoStudent.fullName} (${demoStudent.studentCode}) - CGPA: ${demoStudent.cgpa}`);
 
