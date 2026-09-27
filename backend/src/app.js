@@ -43,7 +43,7 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 // ─── Health Check ──────────────────────────────────────────────────────────
-app.get("/health", (req, res) => {
+app.get(["/health", "/api/health"], (req, res) => {
   res.json({
     success: true,
     message: "CampusHire API is running",
