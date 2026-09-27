@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import api from '../../services/api';
 import type { Student } from '../../types';
 import { useAuth } from '../../hooks/useAuth';
-import { Save, Plus, X } from 'lucide-react';
+import { Save, Plus, X, Lock, KeyRound, CheckCircle2, AlertCircle } from 'lucide-react';
 
 const SKILLS_PRESET = ['Python', 'Java', 'JavaScript', 'React', 'Node.js', 'SQL', 'Machine Learning', 'TensorFlow', 'Git', 'HTML/CSS', 'AutoCAD', 'MATLAB', 'Deep Learning', 'Pandas', 'NumPy', 'PHP', 'Spring Boot', 'Django', 'Flutter', 'DSA'];
 
@@ -18,6 +18,14 @@ const StudentProfile = () => {
     graduationYear: 2025, cgpa: 0, backlogs: 0, skills: [] as string[],
   });
   const [newSkill, setNewSkill] = useState('');
+
+  // Password Change state
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [pwdLoading, setPwdLoading] = useState(false);
+  const [pwdError, setPwdError] = useState('');
+  const [pwdSuccess, setPwdSuccess] = useState('');
 
   useEffect(() => {
     api.get('/students/me').then((res) => {
@@ -61,6 +69,41 @@ const StudentProfile = () => {
       setTimeout(() => setSaveSuccess(false), 3000);
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleChangePassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPwdError('');
+    setPwdSuccess('');
+
+    if (newPassword.length < 6) {
+      setPwdError('New password must be at least 6 characters.');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      setPwdError('New password and confirmation do not match.');
+      return;
+    }
+
+    setPwdLoading(true);
+    try {
+      const res = await api.post('/auth/change-password', {
+        currentPassword,
+        newPassword,
+      });
+      if (res.data.success) {
+        setPwdSuccess('Your password has been successfully updated!');
+        setCurrentPassword('');
+        setNewPassword('');
+        setConfirmPassword('');
+      }
+    } catch (err: unknown) {
+      const axiosErr = err as { response?: { data?: { message?: string } } };
+      setPwdError(axiosErr.response?.data?.message || 'Failed to update password. Verify your current password.');
+    } finally {
+      setPwdLoading(false);
     }
   };
 
@@ -167,6 +210,79 @@ const StudentProfile = () => {
           {isSaving ? 'Saving…' : 'Save Profile'}
         </button>
       </form>
+
+      {/* Security & Password Change */}
+      <div className="card p-5 mt-6 border border-slate-200 shadow-xs">
+        <div className="flex items-center gap-2 mb-1">
+          <KeyRound className="w-4 h-4 text-sky-600" />
+          <h2 className="text-sm font-semibold text-slate-800 uppercase tracking-wider">Account Security</h2>
+        </div>
+        <p className="text-xs text-slate-500 mb-4">Update your password to keep your placement account secure.</p>
+
+        {pwdSuccess && (
+          <div className="mb-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs rounded-lg flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+            <span>{pwdSuccess}</span>
+          </div>
+        )}
+
+        {pwdError && (
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+            <span>{pwdError}</span>
+          </div>
+        )}
+
+        <form onSubmit={handleChangePassword} className="space-y-4">
+          <div>
+            <label className="label">Current Password</label>
+            <input
+              type="password"
+              value={currentPassword}
+              onChange={(e) => setCurrentPassword(e.target.value)}
+              placeholder="Enter current password"
+              className="input text-sm"
+              required
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="label">New Password</label>
+              <input
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                placeholder="At least 6 characters"
+                className="input text-sm"
+                required
+              />
+            </div>
+            <div>
+              <label className="label">Confirm New Password</label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Re-enter new password"
+                className="input text-sm"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              disabled={pwdLoading}
+              className="btn-secondary h-9 px-4 text-xs font-medium inline-flex items-center gap-2"
+            >
+              <Lock className="w-3.5 h-3.5" />
+              {pwdLoading ? 'Updating...' : 'Update Password'}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

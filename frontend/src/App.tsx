@@ -5,6 +5,8 @@ import AppLayout from './layouts/AppLayout';
 
 // Pages
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminStudents from './pages/admin/AdminStudents';
 import AdminCompanies from './pages/admin/AdminCompanies';
@@ -63,6 +65,8 @@ function AppRoutes() {
     <Routes>
       {/* Public */}
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/" element={<RootRedirect />} />
 
       {/* Admin Routes */}

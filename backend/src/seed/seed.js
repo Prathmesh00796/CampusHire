@@ -335,11 +335,16 @@ const seed = async () => {
     console.log("  3. Capgemini   → Min CGPA: 6.0  | Package: ₹6.5 LPA");
     console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
-    process.exit(0);
+    return true;
   } catch (error) {
     console.error("❌ Seed failed:", error);
-    process.exit(1);
+    if (require.main === module) process.exit(1);
+    throw error;
   }
 };
 
-seed();
+if (require.main === module) {
+  seed().then(() => process.exit(0)).catch(() => process.exit(1));
+}
+
+module.exports = { seed };

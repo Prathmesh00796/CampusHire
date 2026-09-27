@@ -30,6 +30,14 @@ const User = sequelize.define(
       allowNull: false,
       defaultValue: "STUDENT",
     },
+    resetPasswordToken: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    resetPasswordExpires: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
   },
   {
     tableName: "users",

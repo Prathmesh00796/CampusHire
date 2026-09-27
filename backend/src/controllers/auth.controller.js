@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { User, Student } = require("../models");
+const { sendPasswordResetEmail } = require("../services/email.service");
 
 /**
  * POST /api/auth/login
@@ -17,11 +18,21 @@ const login = async (req, res) => {
       });
     }
 
-    // Find user by email
-    const user = await User.findOne({
+    // Find user by email (or allow studentCode/PRN)
+    let user = await User.findOne({
       where: { email },
       include: [{ model: Student, as: "student" }],
     });
+
+    if (!user) {
+      // Check if user entered PRN instead of email
+      const student = await Student.findOne({ where: { studentCode: email } });
+      if (student) {
+        user = await User.findByPk(student.userId, {
+          include: [{ model: Student, as: "student" }],
+        });
+      }
+    }
 
     if (!user) {
       return res.status(401).json({
@@ -30,7 +41,7 @@ const login = async (req, res) => {
       });
     }
 
-    // Compare password with hashed password
+    // Compare password
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
       return res.status(401).json({
@@ -67,13 +78,28 @@ const login = async (req, res) => {
 
 /**
  * POST /api/auth/register
- * Register a new user (STUDENT role by default, or as specified).
+ * Student self-registration with complete profile.
  */
 const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const {
+      name,
+      fullName,
+      email,
+      password,
+      studentCode,
+      branch,
+      degree,
+      graduationYear,
+      cgpa,
+      backlogs,
+      skills,
+      phone,
+    } = req.body;
 
-    if (!name || !email || !password) {
+    const studentName = fullName || name;
+
+    if (!studentName || !email || !password) {
       return res.status(400).json({
         success: false,
         message: "Name, email, and password are required.",
@@ -89,15 +115,52 @@ const register = async (req, res) => {
       });
     }
 
-    // Hash password before saving
+    // Check if PRN already exists
+    if (studentCode) {
+      const existingPRN = await Student.findOne({ where: { studentCode } });
+      if (existingPRN) {
+        return res.status(409).json({
+          success: false,
+          message: `A student with PRN ${studentCode} is already registered.`,
+        });
+      }
+    }
+
+    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await User.create({
-      name,
+      name: studentName,
       email,
       password: hashedPassword,
-      role: role || "STUDENT",
+      role: "STUDENT",
     });
+
+    // Create Student profile
+    let studentProfile = null;
+    try {
+      const parsedSkills = Array.isArray(skills)
+        ? skills
+        : typeof skills === "string"
+        ? skills.split(",").map((s) => s.trim()).filter(Boolean)
+        : ["Python", "SQL", "Git"];
+
+      studentProfile = await Student.create({
+        userId: newUser.id,
+        studentCode: studentCode || `DKTE${String(newUser.id).padStart(5, "0")}`,
+        fullName: studentName,
+        email,
+        phone: phone || "9876543210",
+        branch: branch || "Computer Science and Engineering",
+        degree: degree || "B.Tech",
+        graduationYear: parseInt(graduationYear) || 2025,
+        cgpa: parseFloat(cgpa) || 7.0,
+        backlogs: parseInt(backlogs) || 0,
+        skills: parsedSkills,
+      });
+    } catch (profileErr) {
+      console.error("Error creating student profile on registration:", profileErr.message);
+    }
 
     const token = jwt.sign(
       {
@@ -112,7 +175,7 @@ const register = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: "Account created successfully.",
+      message: "Student account created successfully! Welcome to DKTE Placement Cell.",
       data: {
         token,
         user: {
@@ -120,8 +183,172 @@ const register = async (req, res) => {
           name: newUser.name,
           email: newUser.email,
           role: newUser.role,
+          student: studentProfile,
         },
       },
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/**
+ * POST /api/auth/forgot-password
+ * Request OTP to reset password.
+ */
+const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide your registered email address or PRN.",
+      });
+    }
+
+    let user = await User.findOne({ where: { email } });
+
+    // Also check by PRN if not found by email
+    if (!user) {
+      const student = await Student.findOne({ where: { studentCode: email } });
+      if (student) {
+        user = await User.findByPk(student.userId);
+      }
+    }
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "No account found with this email or PRN.",
+      });
+    }
+
+    // Generate 6-digit OTP
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const expires = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
+
+    user.resetPasswordToken = otp;
+    user.resetPasswordExpires = expires;
+    await user.save();
+
+    // Send email with OTP
+    (async () => {
+      try {
+        await sendPasswordResetEmail(user, otp);
+      } catch (err) {
+        console.error("Failed to send reset email:", err.message);
+      }
+    })();
+
+    res.json({
+      success: true,
+      message: `Password reset verification code (OTP) sent to ${user.email}.`,
+      data: { email: user.email },
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/**
+ * POST /api/auth/reset-password
+ * Reset password using verification code (OTP).
+ */
+const resetPassword = async (req, res) => {
+  try {
+    const { email, otp, newPassword } = req.body;
+
+    if (!email || !otp || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: "Email, OTP verification code, and new password are required.",
+      });
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: "New password must be at least 6 characters long.",
+      });
+    }
+
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found." });
+    }
+
+    if (!user.resetPasswordToken || user.resetPasswordToken !== otp.toString().trim()) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid or expired verification code.",
+      });
+    }
+
+    if (new Date() > new Date(user.resetPasswordExpires)) {
+      return res.status(400).json({
+        success: false,
+        message: "Verification code has expired. Please request a new one.",
+      });
+    }
+
+    // Update password
+    user.password = await bcrypt.hash(newPassword, 10);
+    user.resetPasswordToken = null;
+    user.resetPasswordExpires = null;
+    await user.save();
+
+    res.json({
+      success: true,
+      message: "Password reset successful! You can now log in with your new password.",
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/**
+ * POST /api/auth/change-password
+ * Change password for authenticated logged-in user.
+ */
+const changePassword = async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: "Current password and new password are required.",
+      });
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: "New password must be at least 6 characters long.",
+      });
+    }
+
+    const user = await User.findByPk(req.user.id);
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found." });
+    }
+
+    const isMatch = await bcrypt.compare(currentPassword, user.password);
+    if (!isMatch) {
+      return res.status(400).json({
+        success: false,
+        message: "Incorrect current password.",
+      });
+    }
+
+    user.password = await bcrypt.hash(newPassword, 10);
+    await user.save();
+
+    res.json({
+      success: true,
+      message: "Password updated successfully!",
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -149,4 +376,11 @@ const getMe = async (req, res) => {
   }
 };
 
-module.exports = { login, register, getMe };
+module.exports = {
+  login,
+  register,
+  forgotPassword,
+  resetPassword,
+  changePassword,
+  getMe,
+};

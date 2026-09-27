@@ -270,10 +270,50 @@ const sendPlacementEmail = async (student, job, company, placement) => {
   return await sendMail({ to: student.email, subject, html });
 };
 
+/**
+ * 5. Password Reset OTP / Token Email
+ */
+const sendPasswordResetEmail = async (user, otp) => {
+  const subject = `Your Password Reset OTP: ${otp} | DKTE Placements`;
+
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
+      <div style="background: #1e3a8a; padding: 20px; border-radius: 8px; text-align: center; color: white;">
+        <h2 style="margin: 0; font-size: 22px;">DKTE Society's Textile and Engineering Institute</h2>
+        <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Training & Placement Cell · Password Assistance</p>
+      </div>
+
+      <div style="padding: 24px 8px;">
+        <h3 style="color: #1e293b;">Dear ${user.name},</h3>
+        <p style="color: #475569; font-size: 15px; line-height: 1.6;">
+          We received a request to reset the password for your DKTE Placement Portal account. Use the verification code below to set a new password:
+        </p>
+
+        <div style="background: #f1f5f9; border: 2px dashed #94a3b8; padding: 18px; margin: 24px 0; border-radius: 8px; text-align: center;">
+          <p style="margin: 0 0 8px 0; font-size: 13px; color: #64748b; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Verification Code (OTP)</p>
+          <span style="font-size: 36px; font-weight: 800; letter-spacing: 6px; color: #1e3a8a; font-family: monospace;">${otp}</span>
+          <p style="margin: 8px 0 0 0; font-size: 12px; color: #94a3b8;">Valid for 15 minutes · Do not share this code</p>
+        </div>
+
+        <p style="color: #475569; font-size: 14px;">
+          If you did not request a password reset, you can safely ignore this email. Your current password will remain unchanged.
+        </p>
+      </div>
+
+      <div style="border-top: 1px solid #e2e8f0; padding-top: 14px; text-align: center; color: #94a3b8; font-size: 12px;">
+        DKTE Placement Cell, Ichalkaranji, Maharashtra · Automated Security Alert
+      </div>
+    </div>
+  `;
+
+  return await sendMail({ to: user.email, subject, html });
+};
+
 module.exports = {
   sendMail,
   sendApplicationSubmittedEmail,
   sendApplicationStatusUpdateEmail,
   sendInterviewScheduledEmail,
   sendPlacementEmail,
+  sendPasswordResetEmail,
 };

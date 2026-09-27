@@ -31,10 +31,9 @@ APP_DIR="/home/ubuntu/campushire"
 mkdir -p "$APP_DIR"
 cd "$APP_DIR"
 
-# 4. Stop any previous instances
-if [ -f "docker-compose.yml" ]; then
-    echo "🛑 Stopping existing containers..."
-    sudo docker compose down || true
+# 4. Ensure environment configuration
+if [ ! -f ".env" ]; then
+    cp .env.example .env
 fi
 
 # 5. Build and launch 24/7 background containers
