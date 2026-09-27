@@ -1,0 +1,2284 @@
+[
+  {
+    "srNo": 1,
+    "prn": "23UAD012",
+    "fullName": "DANEKAR SIDDHI DHANANJAY",
+    "branch": "AI & Data Science",
+    "cgpa": 9.65
+  },
+  {
+    "srNo": 2,
+    "prn": "23UCS025",
+    "fullName": "DATAR VAIBHAV MAHESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.4
+  },
+  {
+    "srNo": 3,
+    "prn": "23UCS101",
+    "fullName": "PATIL SANIKA ARVIND",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.39
+  },
+  {
+    "srNo": 4,
+    "prn": "23UAD050",
+    "fullName": "PATIL SAMRUDDHI ROHIT",
+    "branch": "AI & Data Science",
+    "cgpa": 9.29
+  },
+  {
+    "srNo": 5,
+    "prn": "23UAM018",
+    "fullName": "CHAVAN SIDDHI SHAILESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 9.23
+  },
+  {
+    "srNo": 6,
+    "prn": "23UCS051",
+    "fullName": "KAMBLE SAKSHI SHIVAJI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.22
+  },
+  {
+    "srNo": 7,
+    "prn": "23UCS030",
+    "fullName": "DHAVALE RUTUJA RAHUL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.21
+  },
+  {
+    "srNo": 8,
+    "prn": "23UAM079",
+    "fullName": "MUJAWAR AAYAN TAJUDDIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 9.14
+  },
+  {
+    "srNo": 9,
+    "prn": "23UCS123",
+    "fullName": "SHINDE PRAFULL PRATAPRAO",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.12
+  },
+  {
+    "srNo": 10,
+    "prn": "23UCS109",
+    "fullName": "PAWASKAR TUSHAR GANPATI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.11
+  },
+  {
+    "srNo": 11,
+    "prn": "24UAD301",
+    "fullName": "BADODE SAKSHI SUDHIR",
+    "branch": "AI & Data Science",
+    "cgpa": 9.1
+  },
+  {
+    "srNo": 12,
+    "prn": "23UAD022",
+    "fullName": "NAZARE JANHAVI SUNIL",
+    "branch": "AI & Data Science",
+    "cgpa": 9.08
+  },
+  {
+    "srNo": 13,
+    "prn": "23UAD025",
+    "fullName": "KANAL PAWADI PIRAGOND",
+    "branch": "AI & Data Science",
+    "cgpa": 9.04
+  },
+  {
+    "srNo": 14,
+    "prn": "23UAD052",
+    "fullName": "PAWAR SHIVTEJ ANANDRAO",
+    "branch": "AI & Data Science",
+    "cgpa": 9.04
+  },
+  {
+    "srNo": 15,
+    "prn": "23UCS077",
+    "fullName": "MALI SEJAL SUNIL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.01
+  },
+  {
+    "srNo": 16,
+    "prn": "24UCS310",
+    "fullName": "POTDAR ANUJA SUDHAKAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 9.01
+  },
+  {
+    "srNo": 17,
+    "prn": "23UAM066",
+    "fullName": "KUNDALE BAPURAO ANIL",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 9
+  },
+  {
+    "srNo": 18,
+    "prn": "23UCS136",
+    "fullName": "WAICHAL MRUDULA GAJANAN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.99
+  },
+  {
+    "srNo": 19,
+    "prn": "23UAM126",
+    "fullName": "SHINGADE SAMRUDDHI MAHESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.97
+  },
+  {
+    "srNo": 20,
+    "prn": "23UAD060",
+    "fullName": "SALOKHE PRATHAMESH RANJIT",
+    "branch": "AI & Data Science",
+    "cgpa": 8.96
+  },
+  {
+    "srNo": 21,
+    "prn": "23UAD062",
+    "fullName": "SANT SEJAL SUNIL",
+    "branch": "AI & Data Science",
+    "cgpa": 8.96
+  },
+  {
+    "srNo": 22,
+    "prn": "23UAD043",
+    "fullName": "PADALKAR SIDDHI VIJAY",
+    "branch": "AI & Data Science",
+    "cgpa": 8.95
+  },
+  {
+    "srNo": 23,
+    "prn": "23UCS041",
+    "fullName": "JADHAV ABHISHEK SANTOSHKUMAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.94
+  },
+  {
+    "srNo": 24,
+    "prn": "23UAD064",
+    "fullName": "SHINDE APURVA RAJIV",
+    "branch": "AI & Data Science",
+    "cgpa": 8.93
+  },
+  {
+    "srNo": 25,
+    "prn": "23UCS129",
+    "fullName": "SUTAR PRADNYA RAJESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.93
+  },
+  {
+    "srNo": 26,
+    "prn": "23UAD019",
+    "fullName": "Gursale Shrutika Dattatray",
+    "branch": "AI & Data Science",
+    "cgpa": 8.92
+  },
+  {
+    "srNo": 27,
+    "prn": "24UCS304",
+    "fullName": "DANOLE SAMIKSHA SAGAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.9
+  },
+  {
+    "srNo": 28,
+    "prn": "24UCS307",
+    "fullName": "KARUNA RIYA PRAVIN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.89
+  },
+  {
+    "srNo": 29,
+    "prn": "23UAM052",
+    "fullName": "KESTE HARSHADA JIVANDHAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.89
+  },
+  {
+    "srNo": 30,
+    "prn": "23UCS047",
+    "fullName": "KADAM VARAD MAHADEV",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.88
+  },
+  {
+    "srNo": 31,
+    "prn": "23UCS016",
+    "fullName": "CHAVAN PRANALI PARASHARAM",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.85
+  },
+  {
+    "srNo": 32,
+    "prn": "24UAD306",
+    "fullName": "PAWAR SAMRUDDHI PRAVIN",
+    "branch": "AI & Data Science",
+    "cgpa": 8.81
+  },
+  {
+    "srNo": 33,
+    "prn": "23UAD020",
+    "fullName": "HERWADE ANUJA VIJAY",
+    "branch": "AI & Data Science",
+    "cgpa": 8.8
+  },
+  {
+    "srNo": 34,
+    "prn": "23UAM127",
+    "fullName": "SHINTRE ADITYA DILEEP",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.8
+  },
+  {
+    "srNo": 35,
+    "prn": "24UAM310",
+    "fullName": "NIPRUL ATHARV ANIL",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.8
+  },
+  {
+    "srNo": 36,
+    "prn": "23UAD048",
+    "fullName": "PATIL PRAJAKTA DIPAK",
+    "branch": "AI & Data Science",
+    "cgpa": 8.79
+  },
+  {
+    "srNo": 37,
+    "prn": "23UAM132",
+    "fullName": "INGALE PRIYANKA BALASO",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.79
+  },
+  {
+    "srNo": 38,
+    "prn": "23UAD021",
+    "fullName": "JADHAV APURVA SATAPPA",
+    "branch": "AI & Data Science",
+    "cgpa": 8.78
+  },
+  {
+    "srNo": 39,
+    "prn": "24UAD308",
+    "fullName": "TEKE ASMITA KISHOR",
+    "branch": "AI & Data Science",
+    "cgpa": 8.76
+  },
+  {
+    "srNo": 40,
+    "prn": "23UAD031",
+    "fullName": "Kshirsagar Namrata Manojkumar",
+    "branch": "AI & Data Science",
+    "cgpa": 8.73
+  },
+  {
+    "srNo": 41,
+    "prn": "24UCS302",
+    "fullName": "BASARWADKAR ANKITA DHANAJI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.73
+  },
+  {
+    "srNo": 42,
+    "prn": "23UAD051",
+    "fullName": "PATIL SNEHA SITARAM",
+    "branch": "AI & Data Science",
+    "cgpa": 8.72
+  },
+  {
+    "srNo": 43,
+    "prn": "23UCS082",
+    "fullName": "MOMIN MAHAMMADGOUS KHALIL.",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.72
+  },
+  {
+    "srNo": 44,
+    "prn": "23UCS043",
+    "fullName": "JALAN ARCHITA SURYAKANT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.71
+  },
+  {
+    "srNo": 45,
+    "prn": "23UAM035",
+    "fullName": "INGALE PRIYANKA BALASO",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.71
+  },
+  {
+    "srNo": 46,
+    "prn": "23UAD015",
+    "fullName": "FAGARE HARSHAD DAYANAND",
+    "branch": "AI & Data Science",
+    "cgpa": 8.7
+  },
+  {
+    "srNo": 47,
+    "prn": "24UAD305",
+    "fullName": "Patil Pranali Baccharam",
+    "branch": "AI & Data Science",
+    "cgpa": 8.68
+  },
+  {
+    "srNo": 48,
+    "prn": "23UCS107",
+    "fullName": "Sujal Sanjeev Pattanshetti",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.68
+  },
+  {
+    "srNo": 49,
+    "prn": "24UCS308",
+    "fullName": "PATIL SAMIKSHA SANTOSH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.68
+  },
+  {
+    "srNo": 50,
+    "prn": "24UAD304",
+    "fullName": "Kumbhar Rohit Avinash",
+    "branch": "AI & Data Science",
+    "cgpa": 8.67
+  },
+  {
+    "srNo": 51,
+    "prn": "23UCS052",
+    "fullName": "KAMBLE SAKSHI SUKHADEV",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.67
+  },
+  {
+    "srNo": 52,
+    "prn": "23UCS114",
+    "fullName": "SANKPAL PRANOTI PRAVIN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.67
+  },
+  {
+    "srNo": 53,
+    "prn": "23UAD069",
+    "fullName": "TODAKAR SANJIVANEE SANTOSH",
+    "branch": "AI & Data Science",
+    "cgpa": 8.64
+  },
+  {
+    "srNo": 54,
+    "prn": "24UAM311",
+    "fullName": "PATIL ARYA BHARAT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.64
+  },
+  {
+    "srNo": 55,
+    "prn": "23UCS029",
+    "fullName": "DHANDALE ATHARV SAKHARAM",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.62
+  },
+  {
+    "srNo": 56,
+    "prn": "24UAM316",
+    "fullName": "ZORE TRUPTI RAJGONDA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.62
+  },
+  {
+    "srNo": 57,
+    "prn": "23UCS113",
+    "fullName": "SALUNKHE PRANALI VISHWAS",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.6
+  },
+  {
+    "srNo": 58,
+    "prn": "23UCS080",
+    "fullName": "MARATHE ISHA RAJENDRA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.59
+  },
+  {
+    "srNo": 59,
+    "prn": "24UCS306",
+    "fullName": "KARADE SONALI KRUSHNAT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.59
+  },
+  {
+    "srNo": 60,
+    "prn": "23UAM029",
+    "fullName": "DHUMAL AMRUTA SAGAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.58
+  },
+  {
+    "srNo": 61,
+    "prn": "24UAM306",
+    "fullName": "MANE ANKITA GAJANAN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.58
+  },
+  {
+    "srNo": 62,
+    "prn": "23UAM049",
+    "fullName": "Karande Tejshree Ramesh",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.57
+  },
+  {
+    "srNo": 63,
+    "prn": "23UCS075",
+    "fullName": "MAHADIK SHWETA VISHWAJEET",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.56
+  },
+  {
+    "srNo": 64,
+    "prn": "23UCS091",
+    "fullName": "NAVALE SAMARTH RAHUL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.56
+  },
+  {
+    "srNo": 65,
+    "prn": "23UAM064",
+    "fullName": "KULKARNI SOURABH MANGESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.55
+  },
+  {
+    "srNo": 66,
+    "prn": "23UAD013",
+    "fullName": "CHOUGULE DARSHAN RAJENDRA",
+    "branch": "AI & Data Science",
+    "cgpa": 8.51
+  },
+  {
+    "srNo": 67,
+    "prn": "23UCS068",
+    "fullName": "KUMBHAR SHIVAM SURESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.51
+  },
+  {
+    "srNo": 68,
+    "prn": "23UCS009",
+    "fullName": "BABAR SAHIL SUDHIR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.5
+  },
+  {
+    "srNo": 69,
+    "prn": "23UAD066",
+    "fullName": "SUHASE HARSHADA SANTOSHKUMAR",
+    "branch": "AI & Data Science",
+    "cgpa": 8.49
+  },
+  {
+    "srNo": 70,
+    "prn": "23UCS088",
+    "fullName": "NADAF NILOFAR ASIF",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.49
+  },
+  {
+    "srNo": 71,
+    "prn": "23UCS132",
+    "fullName": "TEVARATTI VAISHNAV BHAIRU",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.49
+  },
+  {
+    "srNo": 72,
+    "prn": "24UCS314",
+    "fullName": "SHINDE ADITYA AMOL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.48
+  },
+  {
+    "srNo": 73,
+    "prn": "23UAD059",
+    "fullName": "RISAWADE BHARGAVI SHARAD",
+    "branch": "AI & Data Science",
+    "cgpa": 8.46
+  },
+  {
+    "srNo": 74,
+    "prn": "23UAM056",
+    "fullName": "KHOT SHRADDHA SACHIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.46
+  },
+  {
+    "srNo": 75,
+    "prn": "23UAM106",
+    "fullName": "Patil Sneha Ravasaheb",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.44
+  },
+  {
+    "srNo": 76,
+    "prn": "23UCS124",
+    "fullName": "SHINDE SWAPNIL DIPAK",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.43
+  },
+  {
+    "srNo": 77,
+    "prn": "23UCS110",
+    "fullName": "PHALLE OMKAR AMAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.43
+  },
+  {
+    "srNo": 78,
+    "prn": "23UCS138",
+    "fullName": "WASKAR GAYATRI NANDU",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.43
+  },
+  {
+    "srNo": 79,
+    "prn": "24UCS309",
+    "fullName": "PAWAR VIJAYA AMOL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.43
+  },
+  {
+    "srNo": 80,
+    "prn": "24UAD307",
+    "fullName": "SARTAPE SOUMYA SACHIN",
+    "branch": "AI & Data Science",
+    "cgpa": 8.42
+  },
+  {
+    "srNo": 81,
+    "prn": "23UAM110",
+    "fullName": "PENDHARI SAYAMA JAVED",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.41
+  },
+  {
+    "srNo": 82,
+    "prn": "23UCS040",
+    "fullName": "ITAJ SHRADDHA BABASAHEB",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.4
+  },
+  {
+    "srNo": 83,
+    "prn": "23UAM034",
+    "fullName": "Handimalik Tahir Riyaj",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.4
+  },
+  {
+    "srNo": 84,
+    "prn": "23UAM061",
+    "fullName": "KONDEKAR ATHARV NITIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.4
+  },
+  {
+    "srNo": 85,
+    "prn": "23UAM104",
+    "fullName": "PATIL SHRIPRASAD VITTHALRAO",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.4
+  },
+  {
+    "srNo": 86,
+    "prn": "23UAM135",
+    "fullName": "UTTURKAR POORVA VIVEK",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.38
+  },
+  {
+    "srNo": 87,
+    "prn": "23UAM139",
+    "fullName": "RAUT DIVYA RANJEET",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.38
+  },
+  {
+    "srNo": 88,
+    "prn": "23UCS042",
+    "fullName": "JADHAV ARADHY PRAVIN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.36
+  },
+  {
+    "srNo": 89,
+    "prn": "23UAD058",
+    "fullName": "RAUT VINAY VILAS",
+    "branch": "AI & Data Science",
+    "cgpa": 8.35
+  },
+  {
+    "srNo": 90,
+    "prn": "23UAM017",
+    "fullName": "Bongarde Neha Narayan",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.35
+  },
+  {
+    "srNo": 91,
+    "prn": "23UAD014",
+    "fullName": "DESHMUKH JAYRAJ JAGDISH",
+    "branch": "AI & Data Science",
+    "cgpa": 8.34
+  },
+  {
+    "srNo": 92,
+    "prn": "23UCS120",
+    "fullName": "SHAHAPURE PAYAL GAJANAN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.33
+  },
+  {
+    "srNo": 93,
+    "prn": "23UAM065",
+    "fullName": "KUMBHAR APURVA KRUSHNA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.33
+  },
+  {
+    "srNo": 94,
+    "prn": "23UAM073",
+    "fullName": "MALI GANESH MAHADEV",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.33
+  },
+  {
+    "srNo": 95,
+    "prn": "24UAM313",
+    "fullName": "PATIL NEHA RAJGONDA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.33
+  },
+  {
+    "srNo": 96,
+    "prn": "23UAD042",
+    "fullName": "NARAYANKAR PRANAV PRAKASH",
+    "branch": "AI & Data Science",
+    "cgpa": 8.32
+  },
+  {
+    "srNo": 97,
+    "prn": "24UCS311",
+    "fullName": "Ramdurge Runali Rajendra",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.32
+  },
+  {
+    "srNo": 98,
+    "prn": "23UAM025",
+    "fullName": "DAYAMA JATIN SANJAYKUMAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.32
+  },
+  {
+    "srNo": 99,
+    "prn": "24UAM309",
+    "fullName": "MUDHALE ANURADHA DHONDIBA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.32
+  },
+  {
+    "srNo": 100,
+    "prn": "23UAM004",
+    "fullName": "ANANTPURE RUSHIKESH SHIVANAND",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.31
+  },
+  {
+    "srNo": 101,
+    "prn": "23UAM060",
+    "fullName": "KOLI ATHARV SADANAND",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.3
+  },
+  {
+    "srNo": 102,
+    "prn": "23UAD065",
+    "fullName": "Shinde Shravan Kishor",
+    "branch": "AI & Data Science",
+    "cgpa": 8.29
+  },
+  {
+    "srNo": 103,
+    "prn": "23UCS011",
+    "fullName": "BHAMBISHTE DEVIKA VINAYAK",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.29
+  },
+  {
+    "srNo": 104,
+    "prn": "23UAM003",
+    "fullName": "PUJARI ADITI UDAYKUMAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.29
+  },
+  {
+    "srNo": 105,
+    "prn": "23UAM108",
+    "fullName": "PATIL UTKARSH UTTAM",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.29
+  },
+  {
+    "srNo": 106,
+    "prn": "23UCS015",
+    "fullName": "BODARE UDAYSINH MAHADEV",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.28
+  },
+  {
+    "srNo": 107,
+    "prn": "23UAM100",
+    "fullName": "PATIL SANIKA SHITAL",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.28
+  },
+  {
+    "srNo": 108,
+    "prn": "23UAM048",
+    "fullName": "KANOJE SANJANA MARUTI",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.27
+  },
+  {
+    "srNo": 109,
+    "prn": "23UCS118",
+    "fullName": "SAWAIRAM UMAY PARTHSARTHI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.25
+  },
+  {
+    "srNo": 110,
+    "prn": "23UCS134",
+    "fullName": "TONE ASHISH DNYANESHWAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.25
+  },
+  {
+    "srNo": 111,
+    "prn": "23UCS046",
+    "fullName": "KADAM SANSKRUTI DHANAJI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.23
+  },
+  {
+    "srNo": 112,
+    "prn": "24UCS303",
+    "fullName": "BHOSALE RANVEERSINGH SHASHIKANT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.23
+  },
+  {
+    "srNo": 113,
+    "prn": "23UAM116",
+    "fullName": "PURANIK RUTUJA SUHAS",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.23
+  },
+  {
+    "srNo": 114,
+    "prn": "23UCS035",
+    "fullName": "NALAWADE GANESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.22
+  },
+  {
+    "srNo": 115,
+    "prn": "23UCS105",
+    "fullName": "PATIL TANVI SHRENIK",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.22
+  },
+  {
+    "srNo": 116,
+    "prn": "23UAM124",
+    "fullName": "SAWANT PRANALI RAVINDRA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.22
+  },
+  {
+    "srNo": 117,
+    "prn": "23UAM027",
+    "fullName": "DEVKAR DIGVIJAY DILIP",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.21
+  },
+  {
+    "srNo": 118,
+    "prn": "23UAM086",
+    "fullName": "NIKAM TEJASWINEE RAMCHANDRA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.21
+  },
+  {
+    "srNo": 119,
+    "prn": "23UAM114",
+    "fullName": "POTDAR SANIYA AYUDH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.21
+  },
+  {
+    "srNo": 120,
+    "prn": "24UAD303",
+    "fullName": "KHAROSHE SARVESH RAJENDRA",
+    "branch": "AI & Data Science",
+    "cgpa": 8.2
+  },
+  {
+    "srNo": 121,
+    "prn": "23UCS010",
+    "fullName": "BANNAKANWAR SHRUSTI RAVINDRA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.2
+  },
+  {
+    "srNo": 122,
+    "prn": "23UAM093",
+    "fullName": "PATIL PRADIP MALLIKARJUN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.2
+  },
+  {
+    "srNo": 123,
+    "prn": "23UAD034",
+    "fullName": "KUMBHAR PRASAD PRAKASH",
+    "branch": "AI & Data Science",
+    "cgpa": 8.19
+  },
+  {
+    "srNo": 124,
+    "prn": "23UAM013",
+    "fullName": "Bhokare Vrushabh Mahesh",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.19
+  },
+  {
+    "srNo": 125,
+    "prn": "23UAD035",
+    "fullName": "KURADE RACHANA KUNTINATH",
+    "branch": "AI & Data Science",
+    "cgpa": 8.18
+  },
+  {
+    "srNo": 126,
+    "prn": "23UAM081",
+    "fullName": "MULLA AMAN KHALIL",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.18
+  },
+  {
+    "srNo": 127,
+    "prn": "23UCS111",
+    "fullName": "PHASE SARVESH SAGAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.17
+  },
+  {
+    "srNo": 128,
+    "prn": "23UCS021",
+    "fullName": "CHOUGULE BHUMIKA ANIL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.16
+  },
+  {
+    "srNo": 129,
+    "prn": "23UAM026",
+    "fullName": "DESAI HARIS SADIK",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.16
+  },
+  {
+    "srNo": 130,
+    "prn": "24UCS312",
+    "fullName": "SADAMATE SHRENIKA PANDHARINATH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.15
+  },
+  {
+    "srNo": 131,
+    "prn": "23UAM039",
+    "fullName": "AFREEN WAJEED KADEGAONKAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.15
+  },
+  {
+    "srNo": 132,
+    "prn": "23UAM134",
+    "fullName": "TEKE OM DHANANJAY",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.15
+  },
+  {
+    "srNo": 133,
+    "prn": "23UAD018",
+    "fullName": "Vaishnavi Mallikarjun Goture",
+    "branch": "AI & Data Science",
+    "cgpa": 8.14
+  },
+  {
+    "srNo": 134,
+    "prn": "23UCS108",
+    "fullName": "PAWAR ADITI TANAJI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.14
+  },
+  {
+    "srNo": 135,
+    "prn": "23UAD057",
+    "fullName": "RAIKAR PRATHAM RUPESH",
+    "branch": "AI & Data Science",
+    "cgpa": 8.13
+  },
+  {
+    "srNo": 136,
+    "prn": "24UAD302",
+    "fullName": "HOGADE ADITYA VINAYAK",
+    "branch": "AI & Data Science",
+    "cgpa": 8.13
+  },
+  {
+    "srNo": 137,
+    "prn": "23UAM076",
+    "fullName": "MANGORE GOURI HEMANT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.13
+  },
+  {
+    "srNo": 138,
+    "prn": "23UAM080",
+    "fullName": "MUJAWAR MOHMMADNUH NASRUDDIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.13
+  },
+  {
+    "srNo": 139,
+    "prn": "23UCS018",
+    "fullName": "CHILLAL SHUBHAM VIJAY",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.12
+  },
+  {
+    "srNo": 140,
+    "prn": "23UCS037",
+    "fullName": "HAKKE SHREYA BAPUSO",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.11
+  },
+  {
+    "srNo": 141,
+    "prn": "23UCS002",
+    "fullName": "ADEKAR AYUSH TANAJI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.11
+  },
+  {
+    "srNo": 142,
+    "prn": "23UAM050",
+    "fullName": "Karavade Navin Nitin",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.11
+  },
+  {
+    "srNo": 143,
+    "prn": "23UAM137",
+    "fullName": "WAGHMODE MRUDULA RAJENDRA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.11
+  },
+  {
+    "srNo": 144,
+    "prn": "23UAD001",
+    "fullName": "AMANE DARSHAN UDAY",
+    "branch": "AI & Data Science",
+    "cgpa": 8.1
+  },
+  {
+    "srNo": 145,
+    "prn": "23UAM012",
+    "fullName": "BELE SHRAVANI SHITAL",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.1
+  },
+  {
+    "srNo": 146,
+    "prn": "23UAM054",
+    "fullName": "KHANDALE ANUJA TANAPA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.1
+  },
+  {
+    "srNo": 147,
+    "prn": "23UCS059",
+    "fullName": "Kharage Rushikesh Ramesh",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.09
+  },
+  {
+    "srNo": 148,
+    "prn": "23UCS076",
+    "fullName": "MAKANDAR SANIA ZAKIR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.09
+  },
+  {
+    "srNo": 149,
+    "prn": "23UCS53",
+    "fullName": "Kanase Aditya Datta",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.08
+  },
+  {
+    "srNo": 150,
+    "prn": "23UAM031",
+    "fullName": "GANJAVE ROHIT SANTOSH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.08
+  },
+  {
+    "srNo": 151,
+    "prn": "23UCS085",
+    "fullName": "MULLA AKHTAR JAVED",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.07
+  },
+  {
+    "srNo": 152,
+    "prn": "23UCS106",
+    "fullName": "PATIL TARUN RAJAGOUDA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.06
+  },
+  {
+    "srNo": 153,
+    "prn": "23UAM128",
+    "fullName": "SHINTRE ARTI VAIBHAV",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.05
+  },
+  {
+    "srNo": 154,
+    "prn": "23UAM133",
+    "fullName": "BAJBALKAR SWARUPANAND POPAT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.05
+  },
+  {
+    "srNo": 155,
+    "prn": "24UAM312",
+    "fullName": "PATIL DARSHAN NITIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.05
+  },
+  {
+    "srNo": 156,
+    "prn": "23UAD009",
+    "fullName": "CHAVAN RAHUL JAVAHAR",
+    "branch": "AI & Data Science",
+    "cgpa": 8.04
+  },
+  {
+    "srNo": 157,
+    "prn": "23UAD003",
+    "fullName": "BAGADI ASHWINI APPASO",
+    "branch": "AI & Data Science",
+    "cgpa": 8.03
+  },
+  {
+    "srNo": 158,
+    "prn": "24UAM315",
+    "fullName": "SUTAR OM NARAYAN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.03
+  },
+  {
+    "srNo": 159,
+    "prn": "23UAM115",
+    "fullName": "POWAR AMRUTA SHASHIKANT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.02
+  },
+  {
+    "srNo": 160,
+    "prn": "23UCS006",
+    "fullName": "KALE ANURAG CHARUDATTA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.01
+  },
+  {
+    "srNo": 161,
+    "prn": "23UAM019",
+    "fullName": "CHOTHE ATHARV SACHIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.01
+  },
+  {
+    "srNo": 162,
+    "prn": "23UAM111",
+    "fullName": "PHARANE SHIVTEJ SHANKAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 8.01
+  },
+  {
+    "srNo": 163,
+    "prn": "23UCS116",
+    "fullName": "SATARMAKER AYAN ALTAF",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8
+  },
+  {
+    "srNo": 164,
+    "prn": "23UAD010",
+    "fullName": "CHOUGULE ANMOL SUBHASH",
+    "branch": "AI & Data Science",
+    "cgpa": 7.99
+  },
+  {
+    "srNo": 165,
+    "prn": "23UCS008",
+    "fullName": "AWATI YOGESH SHASHIKANT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.99
+  },
+  {
+    "srNo": 166,
+    "prn": "23UCS024",
+    "fullName": "DAGA MAHAVEERPRASAD ASHOKKUMAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.97
+  },
+  {
+    "srNo": 167,
+    "prn": "23UAD056",
+    "fullName": "CHAVARE PURVA VILAS",
+    "branch": "AI & Data Science",
+    "cgpa": 7.96
+  },
+  {
+    "srNo": 168,
+    "prn": "23UAM028",
+    "fullName": "DHANAWADE DIKSHANT SANJAY",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.96
+  },
+  {
+    "srNo": 169,
+    "prn": "23UCS093",
+    "fullName": "PACHORE AYUSH PRAKASH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.95
+  },
+  {
+    "srNo": 170,
+    "prn": "23UAD046",
+    "fullName": "PATIL ATHARV SANDIP",
+    "branch": "AI & Data Science",
+    "cgpa": 7.94
+  },
+  {
+    "srNo": 171,
+    "prn": "23UAD054",
+    "fullName": "Pore Tanvi Vinod",
+    "branch": "AI & Data Science",
+    "cgpa": 7.94
+  },
+  {
+    "srNo": 172,
+    "prn": "23UAM020",
+    "fullName": "CHOTHE SHANTANU RAJENDRA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.93
+  },
+  {
+    "srNo": 173,
+    "prn": "23UAM072",
+    "fullName": "MAGDUM SHRAVANI RAJARAM",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.93
+  },
+  {
+    "srNo": 174,
+    "prn": "23UAD053",
+    "fullName": "Swaroopa shailesh payashetti",
+    "branch": "AI & Data Science",
+    "cgpa": 7.92
+  },
+  {
+    "srNo": 175,
+    "prn": "23UCS017",
+    "fullName": "CHAVARE SHREYASH SURESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.92
+  },
+  {
+    "srNo": 176,
+    "prn": "23UCS004",
+    "fullName": "AMBI ATHARV VITTHAL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.91
+  },
+  {
+    "srNo": 177,
+    "prn": "23UCS083",
+    "fullName": "MOTE PRACHI UMESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.91
+  },
+  {
+    "srNo": 178,
+    "prn": "23UAD005",
+    "fullName": "BHAGWAT ARYA MUKUND",
+    "branch": "AI & Data Science",
+    "cgpa": 7.9
+  },
+  {
+    "srNo": 179,
+    "prn": "23UAM129",
+    "fullName": "Shintre vaishnavi balaso",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.9
+  },
+  {
+    "srNo": 180,
+    "prn": "23UCS096",
+    "fullName": "PATIL PARAS SHANTISAGAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.89
+  },
+  {
+    "srNo": 181,
+    "prn": "23UAM036",
+    "fullName": "JADHAV PRATIK RAJARAM",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.89
+  },
+  {
+    "srNo": 182,
+    "prn": "23UAM136",
+    "fullName": "VAISHNAV GOUTAM TARAPRAKASH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.88
+  },
+  {
+    "srNo": 183,
+    "prn": "23UAD041",
+    "fullName": "NAIK KIRAN LINGAPPA",
+    "branch": "AI & Data Science",
+    "cgpa": 7.87
+  },
+  {
+    "srNo": 184,
+    "prn": "23UCS100",
+    "fullName": "PATIL SAMRUDDHI SANDIP",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.87
+  },
+  {
+    "srNo": 185,
+    "prn": "23UAM014",
+    "fullName": "BHOSALE AKSHATA ANNASAHEB",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.87
+  },
+  {
+    "srNo": 186,
+    "prn": "23UAM088",
+    "fullName": "PAREEK NANDINI MAHESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.87
+  },
+  {
+    "srNo": 187,
+    "prn": "24UAM304",
+    "fullName": "JAMADAR TASLIMA GULAB",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.87
+  },
+  {
+    "srNo": 188,
+    "prn": "23UAM044",
+    "fullName": "Kamble Harshali Haridas",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.86
+  },
+  {
+    "srNo": 189,
+    "prn": "23UAM090",
+    "fullName": "PATIL ADITYA SOURABH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.84
+  },
+  {
+    "srNo": 190,
+    "prn": "23UCS060",
+    "fullName": "KHARAT TEJAS PINTU",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.83
+  },
+  {
+    "srNo": 191,
+    "prn": "23UAD039",
+    "fullName": "METE RITESH SANTOSH",
+    "branch": "AI & Data Science",
+    "cgpa": 7.82
+  },
+  {
+    "srNo": 192,
+    "prn": "24UAM305",
+    "fullName": "KALAS KAUSHAL KISHOR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.82
+  },
+  {
+    "srNo": 193,
+    "prn": "23UCS073",
+    "fullName": "BHILAVE MADHURA SANJAY",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.8
+  },
+  {
+    "srNo": 194,
+    "prn": "23UCS131",
+    "fullName": "TAKALE ROHIT RAJENDRA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.8
+  },
+  {
+    "srNo": 195,
+    "prn": "23UAM097",
+    "fullName": "PATIL PRATIKSHA TUKARAM",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.8
+  },
+  {
+    "srNo": 196,
+    "prn": "23UAD049",
+    "fullName": "PATIL ROHAN MAHAVEER",
+    "branch": "AI & Data Science",
+    "cgpa": 7.79
+  },
+  {
+    "srNo": 197,
+    "prn": "23UCS130",
+    "fullName": "SUTAR RADHIKA RAMESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.79
+  },
+  {
+    "srNo": 198,
+    "prn": "23UAM084",
+    "fullName": "NANDRE PARYUSHA SHREYANS",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.79
+  },
+  {
+    "srNo": 199,
+    "prn": "23UAD036",
+    "fullName": "MAGDUM ATHARV AMAR",
+    "branch": "AI & Data Science",
+    "cgpa": 7.78
+  },
+  {
+    "srNo": 200,
+    "prn": "23UCS094",
+    "fullName": "PATIL ASHISH SUNIL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.78
+  },
+  {
+    "srNo": 201,
+    "prn": "23UCS127",
+    "fullName": "Sidanale Shreya Babasaheb",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.78
+  },
+  {
+    "srNo": 202,
+    "prn": "24UAM303",
+    "fullName": "DAKE SHRAVANI SURESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.78
+  },
+  {
+    "srNo": 203,
+    "prn": "23UAM015",
+    "fullName": "BHOSALE NAVANATH JANARDAN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.77
+  },
+  {
+    "srNo": 204,
+    "prn": "23UAM001",
+    "fullName": "AARTH AKSHAY SHAH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.76
+  },
+  {
+    "srNo": 205,
+    "prn": "23UAM102",
+    "fullName": "Patil Sarthak Sadashiv",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.76
+  },
+  {
+    "srNo": 206,
+    "prn": "23UCS095",
+    "fullName": "PATIL DEVYANI VIJAYSINH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.75
+  },
+  {
+    "srNo": 207,
+    "prn": "23UCS058",
+    "fullName": "KHANDAGALE CHAITANYA BHARAT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.73
+  },
+  {
+    "srNo": 208,
+    "prn": "23UCS038",
+    "fullName": "HANAMAPURE NEHA NARAYAN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.72
+  },
+  {
+    "srNo": 209,
+    "prn": "23UAM122",
+    "fullName": "PATIL SATYAJEET SANJAYKUMAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.72
+  },
+  {
+    "srNo": 210,
+    "prn": "23UAM078",
+    "fullName": "MIRAJKAR SRUSHTI GAJANAN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.71
+  },
+  {
+    "srNo": 211,
+    "prn": "23UAD006",
+    "fullName": "BHORE APARNA UMESH",
+    "branch": "AI & Data Science",
+    "cgpa": 7.7
+  },
+  {
+    "srNo": 212,
+    "prn": "23UAM091",
+    "fullName": "PATIL ANJALI RAJENDRA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.7
+  },
+  {
+    "srNo": 213,
+    "prn": "23UCS078",
+    "fullName": "MANE ADVAIT RAJENDRA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.67
+  },
+  {
+    "srNo": 214,
+    "prn": "23UCS141",
+    "fullName": "SHAIKH JUNEID RIYAJAHMED",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.67
+  },
+  {
+    "srNo": 215,
+    "prn": "23UAM101",
+    "fullName": "PATIL SANMATI VIJAY",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.67
+  },
+  {
+    "srNo": 216,
+    "prn": "23UAM118",
+    "fullName": "REDEKAR SIDDHANT RAMESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.67
+  },
+  {
+    "srNo": 217,
+    "prn": "23UAD038",
+    "fullName": "MANE SARTHAK JANARDHAN",
+    "branch": "AI & Data Science",
+    "cgpa": 7.66
+  },
+  {
+    "srNo": 218,
+    "prn": "23UAD068",
+    "fullName": "CHOUGULE TEJAS SANJAY",
+    "branch": "AI & Data Science",
+    "cgpa": 7.66
+  },
+  {
+    "srNo": 219,
+    "prn": "23UAM009",
+    "fullName": "BABAR TEJAS NANDKUMAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.65
+  },
+  {
+    "srNo": 220,
+    "prn": "23UAM032",
+    "fullName": "GUDASE SHWETA BALU",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.65
+  },
+  {
+    "srNo": 221,
+    "prn": "23UCS119",
+    "fullName": "SAYAGAON ADITI ARUN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.62
+  },
+  {
+    "srNo": 222,
+    "prn": "23UAD004",
+    "fullName": "BAIRAGDAR ARKAM FIROJ",
+    "branch": "AI & Data Science",
+    "cgpa": 7.6
+  },
+  {
+    "srNo": 223,
+    "prn": "23UCS112",
+    "fullName": "POL SWAPNIL DILIP",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.6
+  },
+  {
+    "srNo": 224,
+    "prn": "23UAM092",
+    "fullName": "PATIL PIYUSH VIPUL",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.6
+  },
+  {
+    "srNo": 225,
+    "prn": "23UAM113",
+    "fullName": "POMDHARANE SUYOG NAMDEV",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.6
+  },
+  {
+    "srNo": 226,
+    "prn": "23UAM070",
+    "fullName": "MAGDUM RAJ SHARAD",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.59
+  },
+  {
+    "srNo": 227,
+    "prn": "23UCS012",
+    "fullName": "BHOSALE ATHARV OMPRAKASH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.58
+  },
+  {
+    "srNo": 228,
+    "prn": "23UCS044",
+    "fullName": "JAMDAR RADHIKA MAHESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.57
+  },
+  {
+    "srNo": 229,
+    "prn": "23UAM024",
+    "fullName": "DAVARI SHUBHAM VISHNU",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.57
+  },
+  {
+    "srNo": 230,
+    "prn": "23UAM067",
+    "fullName": "KURANE ATHARV GUNDU",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.57
+  },
+  {
+    "srNo": 231,
+    "prn": "23UAM068",
+    "fullName": "SIDDHANT PRASHANT LATKAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.57
+  },
+  {
+    "srNo": 232,
+    "prn": "23UAD016",
+    "fullName": "GADNAIK RUSHIKESH KALLAPPA",
+    "branch": "AI & Data Science",
+    "cgpa": 7.56
+  },
+  {
+    "srNo": 233,
+    "prn": "23UAM107",
+    "fullName": "PATIL SRUSHTI SANJAY",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.55
+  },
+  {
+    "srNo": 234,
+    "prn": "24UAM302",
+    "fullName": "CHOPADE PRATHMESH MAHADEV",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.54
+  },
+  {
+    "srNo": 235,
+    "prn": "23UCS070",
+    "fullName": "LATKAR WAJID FIROJ",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.53
+  },
+  {
+    "srNo": 236,
+    "prn": "23UCS092",
+    "fullName": "NIVLE ROHAN ASHOKRAO",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.53
+  },
+  {
+    "srNo": 237,
+    "prn": "23UAM033",
+    "fullName": "Gurav Harshvardhan Santosh",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.53
+  },
+  {
+    "srNo": 238,
+    "prn": "23UAM087",
+    "fullName": "PARAB OMKAR UMESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.53
+  },
+  {
+    "srNo": 239,
+    "prn": "23UAM016",
+    "fullName": "Boli Yuvraj Bhimrao",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.52
+  },
+  {
+    "srNo": 240,
+    "prn": "23UAD017",
+    "fullName": "GAVADE SHREYASH SUNIL",
+    "branch": "AI & Data Science",
+    "cgpa": 7.51
+  },
+  {
+    "srNo": 241,
+    "prn": "23UAD027",
+    "fullName": "KHADE SHREYA PRAKASH",
+    "branch": "AI & Data Science",
+    "cgpa": 7.51
+  },
+  {
+    "srNo": 242,
+    "prn": "23UAM040",
+    "fullName": "KALE ATHARV SANDIP",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.48
+  },
+  {
+    "srNo": 243,
+    "prn": "23UAM109",
+    "fullName": "PATIL YASH SARDAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.47
+  },
+  {
+    "srNo": 244,
+    "prn": "23UCS023",
+    "fullName": "CHOUGULE PURVA VARDHAMAN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.46
+  },
+  {
+    "srNo": 245,
+    "prn": "24UAM307",
+    "fullName": "MANJIRE Saklen Mustak",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.46
+  },
+  {
+    "srNo": 246,
+    "prn": "23UCS081",
+    "fullName": "MASRAM SAMAY SUDHAKAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.43
+  },
+  {
+    "srNo": 247,
+    "prn": "24UCS305",
+    "fullName": "JADHAV SUYASH ARUN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.4
+  },
+  {
+    "srNo": 248,
+    "prn": "23UAM095",
+    "fullName": "PATIL PRATIK KUMAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.39
+  },
+  {
+    "srNo": 249,
+    "prn": "23UAM077",
+    "fullName": "MULE MANTHAN MAYUR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.38
+  },
+  {
+    "srNo": 250,
+    "prn": "23UAD024",
+    "fullName": "KAMBLE DIPRATNA RAVI",
+    "branch": "AI & Data Science",
+    "cgpa": 7.37
+  },
+  {
+    "srNo": 251,
+    "prn": "23UAM075",
+    "fullName": "MANE SAMIKSHA BHARAT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.37
+  },
+  {
+    "srNo": 252,
+    "prn": "24UAM317",
+    "fullName": "PATIL SHRAVANI SACHIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.37
+  },
+  {
+    "srNo": 253,
+    "prn": "23UAD055",
+    "fullName": "POWAR RITIKA AMAR",
+    "branch": "AI & Data Science",
+    "cgpa": 7.34
+  },
+  {
+    "srNo": 254,
+    "prn": "23UAD037",
+    "fullName": "MAGDUM DIVYA KUBER",
+    "branch": "AI & Data Science",
+    "cgpa": 7.31
+  },
+  {
+    "srNo": 255,
+    "prn": "23UAM005",
+    "fullName": "Landage Anish Sachin",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.3
+  },
+  {
+    "srNo": 256,
+    "prn": "23UCS089",
+    "fullName": "NANDGAVE CHETAN NAGNATH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.29
+  },
+  {
+    "srNo": 257,
+    "prn": "23UAM021",
+    "fullName": "Chougule Shreyash sheetal",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.29
+  },
+  {
+    "srNo": 258,
+    "prn": "23UAD008",
+    "fullName": "CHAVAN KARAN SUBHASH",
+    "branch": "AI & Data Science",
+    "cgpa": 7.28
+  },
+  {
+    "srNo": 259,
+    "prn": "23UAM011",
+    "fullName": "BANDGAR SANKET SAHEBRAO",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.26
+  },
+  {
+    "srNo": 260,
+    "prn": "23UAM123",
+    "fullName": "SAVALE ADITYA SANDEEP",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.23
+  },
+  {
+    "srNo": 261,
+    "prn": "23UAM059",
+    "fullName": "Kokare Prathmesh Vaman",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.22
+  },
+  {
+    "srNo": 262,
+    "prn": "23UAD044",
+    "fullName": "PARGAVE RAJENDRA DIVYANGINI",
+    "branch": "AI & Data Science",
+    "cgpa": 7.21
+  },
+  {
+    "srNo": 263,
+    "prn": "23UCS072",
+    "fullName": "LONDHE AKSHAD BALU",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.2
+  },
+  {
+    "srNo": 264,
+    "prn": "23UCS103",
+    "fullName": "PATIL SHRUTI DEEPAK",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.2
+  },
+  {
+    "srNo": 265,
+    "prn": "23UCS049",
+    "fullName": "KAMBLE DEEKSHA RAVINDRA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.18
+  },
+  {
+    "srNo": 266,
+    "prn": "23UCS128",
+    "fullName": "SURYAWANSHI SANDESH VIJAY",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.17
+  },
+  {
+    "srNo": 267,
+    "prn": "23UCS086",
+    "fullName": "MULLA MEHBOOB ZAIRUDDIN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.16
+  },
+  {
+    "srNo": 268,
+    "prn": "23UAM051",
+    "fullName": "KATKAR SARTHAK JITENDRA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.15
+  },
+  {
+    "srNo": 269,
+    "prn": "23UCS087",
+    "fullName": "MURABATTE YASH VIJAYKUMAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.14
+  },
+  {
+    "srNo": 270,
+    "prn": "23UAM030",
+    "fullName": "GADADE PRATIKSHA BHAUSAHEB",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.11
+  },
+  {
+    "srNo": 271,
+    "prn": "23UAM074",
+    "fullName": "MANE ANKITA RAMESH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.05
+  },
+  {
+    "srNo": 272,
+    "prn": "23UAD070",
+    "fullName": "VANI PRATHAMESH SUBHASH",
+    "branch": "AI & Data Science",
+    "cgpa": 7.04
+  },
+  {
+    "srNo": 273,
+    "prn": "23UCS048",
+    "fullName": "KADAM VIRAJ VIJAY",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.04
+  },
+  {
+    "srNo": 274,
+    "prn": "23UCS045",
+    "fullName": "KADAM RAJVARDHAN VIKRAMSINH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.01
+  },
+  {
+    "srNo": 275,
+    "prn": "23UAM008",
+    "fullName": "BABAR ABHAYSINH UDAYSINH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.01
+  },
+  {
+    "srNo": 276,
+    "prn": "23UAM119",
+    "fullName": "REGADE DHIRAJ SHRAVAN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 7.01
+  },
+  {
+    "srNo": 277,
+    "prn": "23UCS137",
+    "fullName": "Waifalkar Aryan Dattatray",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.96
+  },
+  {
+    "srNo": 278,
+    "prn": "23UAM083",
+    "fullName": "Musale Meghana Mahadev",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.95
+  },
+  {
+    "srNo": 279,
+    "prn": "23UCS022",
+    "fullName": "CHOUGULE PRERANA APPASO",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.94
+  },
+  {
+    "srNo": 280,
+    "prn": "23UAM089",
+    "fullName": "PATIL ADITYA ANANT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.94
+  },
+  {
+    "srNo": 281,
+    "prn": "23UAD061",
+    "fullName": "SAMANI DIYA AMIT",
+    "branch": "AI & Data Science",
+    "cgpa": 6.92
+  },
+  {
+    "srNo": 282,
+    "prn": "23UAM069",
+    "fullName": "LONDHE PRASAD BABASO",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.89
+  },
+  {
+    "srNo": 283,
+    "prn": "23UAD023",
+    "fullName": "KAKADE PRATHAM ABHAY",
+    "branch": "AI & Data Science",
+    "cgpa": 6.84
+  },
+  {
+    "srNo": 284,
+    "prn": "23UAM125",
+    "fullName": "SHIKALGAR SUHANA RIYAJ",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.82
+  },
+  {
+    "srNo": 285,
+    "prn": "23UAM130",
+    "fullName": "TIRTH SHISHIR BALASAB",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.82
+  },
+  {
+    "srNo": 286,
+    "prn": "23UCS019",
+    "fullName": "CHOUDHARY VIKRAM PADMARAM",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.81
+  },
+  {
+    "srNo": 287,
+    "prn": "23UAM112",
+    "fullName": "PHULE AMITABH SANJAY",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.73
+  },
+  {
+    "srNo": 288,
+    "prn": "23UCS069",
+    "fullName": "Kurane Mattay Manohar",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.72
+  },
+  {
+    "srNo": 289,
+    "prn": "23UAM094",
+    "fullName": "PATIL PRAJWAL SACHIN",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.72
+  },
+  {
+    "srNo": 290,
+    "prn": "23UAM046",
+    "fullName": "KAMBLE PRASENJEET PRABHAKAR",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.69
+  },
+  {
+    "srNo": 291,
+    "prn": "23UCS014",
+    "fullName": "BIRNALE ADITYA BHARAT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.67
+  },
+  {
+    "srNo": 292,
+    "prn": "23UAM117",
+    "fullName": "RAJPUT ADITYA AJIT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.66
+  },
+  {
+    "srNo": 293,
+    "prn": "23UAM058",
+    "fullName": "KOIK PARTH NEMINATH",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.64
+  },
+  {
+    "srNo": 294,
+    "prn": "23UAD011",
+    "fullName": "CHOUGULE ASHWIN RATNADEEP",
+    "branch": "AI & Data Science",
+    "cgpa": 6.63
+  },
+  {
+    "srNo": 295,
+    "prn": "23UAM085",
+    "fullName": "NEJE DARSHAN CHANDRAKANT",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.63
+  },
+  {
+    "srNo": 296,
+    "prn": "23UAD026",
+    "fullName": "KUMAR KESHAV",
+    "branch": "AI & Data Science",
+    "cgpa": 6.6
+  },
+  {
+    "srNo": 297,
+    "prn": "23UAM037",
+    "fullName": "JADHAV SHRIYASH SONABA",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.59
+  },
+  {
+    "srNo": 298,
+    "prn": "23UAM047",
+    "fullName": "Kamble Srushti Avadhut",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.58
+  },
+  {
+    "srNo": 299,
+    "prn": "23UAM096",
+    "fullName": "PATIL PRATIK SAMBHAJI",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.56
+  },
+  {
+    "srNo": 300,
+    "prn": "23UCS126",
+    "fullName": "POWAR SHUBHAM SURESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.54
+  },
+  {
+    "srNo": 301,
+    "prn": "23UCS104",
+    "fullName": "PATIL SWAYAM SUNIL",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.49
+  },
+  {
+    "srNo": 302,
+    "prn": "23UAM006",
+    "fullName": "WAGHMARE ASHWJEET VINOD",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 6.45
+  },
+  {
+    "srNo": 303,
+    "prn": "23UAD028",
+    "fullName": "KHADE SHUBHAM RAJENDRA",
+    "branch": "AI & Data Science",
+    "cgpa": 6.37
+  },
+  {
+    "srNo": 304,
+    "prn": "23UCS003",
+    "fullName": "KORIGERI AJEET SIDDAPPA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.37
+  },
+  {
+    "srNo": 305,
+    "prn": "23UCS122",
+    "fullName": "SHETE SUMIT SUHAS",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.32
+  },
+  {
+    "srNo": 306,
+    "prn": "22UCS034",
+    "fullName": "GANESHWADE HARSH KULBHUSHAN",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.3
+  },
+  {
+    "srNo": 307,
+    "prn": "23UCS027",
+    "fullName": "AJAYSINH ANNASAHEB DESAI",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 6.18
+  },
+  {
+    "srNo": 308,
+    "prn": "22UAD057",
+    "fullName": "REDEKAR KARTIK SHASHIKANT",
+    "branch": "AI & Data Science",
+    "cgpa": 6.17
+  },
+  {
+    "srNo": 309,
+    "prn": "23UAD032",
+    "fullName": "KULKARNI SOUJANY RAMCHANDRA",
+    "branch": "AI & Data Science",
+    "cgpa": 6.11
+  },
+  {
+    "srNo": 310,
+    "prn": "23UCS303",
+    "fullName": "DESAI PRATIKSHA SARJERAO",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 5.97
+  },
+  {
+    "srNo": 311,
+    "prn": "22UCS117",
+    "fullName": "SHAHAPURE DARSHAN RAVINDRA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 5.86
+  },
+  {
+    "srNo": 312,
+    "prn": "23UCS033",
+    "fullName": "Gaikwad Dhairyasheel Namdev",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 5.86
+  },
+  {
+    "srNo": 313,
+    "prn": "22UCS016",
+    "fullName": "BHURKE SUMEDH SAGAR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 5.83
+  },
+  {
+    "srNo": 314,
+    "prn": "23UAM053",
+    "fullName": "KHADE RASIKA SADASHIV",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 5.82
+  },
+  {
+    "srNo": 315,
+    "prn": "22UAD037",
+    "fullName": "MAGDUM MRUDULA SHITAL",
+    "branch": "AI & Data Science",
+    "cgpa": 5.8
+  },
+  {
+    "srNo": 316,
+    "prn": "23UCS056",
+    "fullName": "KARVEKAR SAKSHI CHANDRAKANT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 5.45
+  },
+  {
+    "srNo": 317,
+    "prn": "21UCS112",
+    "fullName": "SALUNKHE SHRUTI DATTATRAY",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 5.03
+  },
+  {
+    "srNo": 318,
+    "prn": "22UCS080",
+    "fullName": "MAGDUM SANIKA RAKESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 4.92
+  },
+  {
+    "srNo": 319,
+    "prn": "23UCS065",
+    "fullName": "KORE MANTHAN PRASANNA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.69
+  },
+  {
+    "srNo": 320,
+    "prn": "23UCS084",
+    "fullName": "DESHMUKH MRUDUL JAYSINH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.47
+  },
+  {
+    "srNo": 321,
+    "prn": "23UCS067",
+    "fullName": "KULKARNI MANALI SHRIKANT",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 8.24
+  },
+  {
+    "srNo": 322,
+    "prn": "23UCS020",
+    "fullName": "CHOUGULE ARYA UMESH",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.9
+  },
+  {
+    "srNo": 323,
+    "prn": "23UCS066",
+    "fullName": "KOTAGOND SONALI BASAPPA",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 7.82
+  },
+  {
+    "srNo": 324,
+    "prn": "23UAD063",
+    "fullName": "SOMESH RAMSWAROOP SHARMA",
+    "branch": "AI & Data Science",
+    "cgpa": 7.35
+  },
+  {
+    "srNo": 325,
+    "prn": "23UCS062",
+    "fullName": "KHURPE SHRUTIK SUDHIR",
+    "branch": "Computer Science and Engineering",
+    "cgpa": 5.56
+  },
+  {
+    "srNo": 326,
+    "prn": "22UAI065",
+    "fullName": "LONDHE ANURAG BALASAHEB",
+    "branch": "CSE (AI & ML)",
+    "cgpa": 5.29
+  }
+]

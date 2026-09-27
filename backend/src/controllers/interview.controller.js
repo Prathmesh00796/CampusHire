@@ -1,4 +1,5 @@
 const { Interview, Application, Student, Job, Company } = require("../models");
+const { sendInterviewScheduledEmail } = require("../services/email.service");
 
 /**
  * POST /api/interviews
@@ -49,6 +50,31 @@ const createInterview = async (req, res) => {
       status: "SCHEDULED",
       result: "PENDING",
     });
+
+    // Trigger async email notification
+    (async () => {
+      try {
+        const student = await Student.findByPk(application.studentId);
+        const job = await Job.findByPk(application.jobId);
+        if (student && student.email && job) {
+          const company = await Company.findByPk(job.companyId);
+          await sendInterviewScheduledEmail(
+            student,
+            job,
+            company || { name: "Recruiting Company" },
+            {
+              roundType: round,
+              roundNumber: 1,
+              scheduledAt: `${scheduledDate} ${scheduledTime || ""}`,
+              meetingLink,
+              interviewerName: interviewer,
+            }
+          );
+        }
+      } catch (err) {
+        console.error("Email notification error on interview schedule:", err.message);
+      }
+    })();
 
     res.status(201).json({
       success: true,

@@ -59,12 +59,15 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="px-5 py-5 border-b border-slate-100">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center">
-            <GraduationCap className="w-5 h-5 text-white" />
+      <div className="px-5 py-4 border-b border-slate-100 bg-slate-50/50">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-gradient-to-tr from-blue-700 to-indigo-600 rounded-xl flex items-center justify-center shadow-sm shadow-blue-500/20 flex-shrink-0">
+            <GraduationCap className="w-6 h-6 text-white" />
           </div>
-          <span className="text-lg font-bold text-slate-900 tracking-tight">CampusHire</span>
+          <div className="min-w-0">
+            <span className="text-base font-extrabold text-slate-900 tracking-tight block">DKTE Placements</span>
+            <span className="text-[11px] font-medium text-slate-500 block truncate">Training & Placement Cell</span>
+          </div>
         </div>
       </div>
 
@@ -141,18 +144,26 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Mobile Header */}
-        <header className="lg:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200">
-          <button onClick={() => setMobileOpen(true)} className="p-1.5 rounded-lg hover:bg-slate-100">
-            <Menu className="w-5 h-5 text-slate-600" />
-          </button>
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-sky-500 rounded flex items-center justify-center">
-              <GraduationCap className="w-4 h-4 text-white" />
+        {/* Top Header Bar */}
+        <header className="flex items-center justify-between px-6 py-3.5 bg-white border-b border-slate-200">
+          <div className="flex items-center gap-3">
+            <button onClick={() => setMobileOpen(true)} className="lg:hidden p-1.5 rounded-lg hover:bg-slate-100">
+              <Menu className="w-5 h-5 text-slate-600" />
+            </button>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold tracking-wider uppercase text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">DKTE TEI</span>
+                <span className="text-sm font-semibold text-slate-800 hidden sm:inline">DKTE Society's Textile & Engineering Institute</span>
+              </div>
+              <p className="text-[11px] text-slate-400 hidden sm:block">An Autonomous Institute · Training & Placement Assistance Portal</p>
             </div>
-            <span className="font-bold text-slate-900">CampusHire</span>
           </div>
-          <div className="w-8" />
+          <div className="flex items-center gap-3 text-xs text-slate-500 font-medium">
+            <span className="hidden md:inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full border border-emerald-100 font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              2024-2025 Placement Drive Active
+            </span>
+          </div>
         </header>
 
         {/* Page Content */}

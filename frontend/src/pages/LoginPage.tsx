@@ -12,9 +12,9 @@ interface DemoCredential {
 }
 
 const demoCredentials: DemoCredential[] = [
-  { role: 'Admin', email: 'admin@campushire.demo', password: 'Admin@123', color: 'bg-violet-50 border-violet-200 hover:border-violet-400' },
-  { role: 'Student', email: 'student@campushire.demo', password: 'Student@123', color: 'bg-sky-50 border-sky-200 hover:border-sky-400' },
-  { role: 'Recruiter', email: 'recruiter@campushire.demo', password: 'Recruiter@123', color: 'bg-amber-50 border-amber-200 hover:border-amber-400' },
+  { role: 'Student (Prathmesh)', email: 'prathmeshchopade96@gmail.com', password: 'Student@123', color: 'bg-emerald-50 border-emerald-300 hover:border-emerald-500 text-emerald-800' },
+  { role: 'Placement Admin', email: 'admin@dkte.ac.in', password: 'Admin@123', color: 'bg-blue-50 border-blue-300 hover:border-blue-500 text-blue-800' },
+  { role: 'Recruiter (TCS)', email: 'recruiter@tcs.com', password: 'Recruiter@123', color: 'bg-purple-50 border-purple-300 hover:border-purple-500 text-purple-800' },
 ];
 
 const LoginPage = () => {
@@ -55,9 +55,9 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex">
       {/* Left Panel — Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-slate-900 relative overflow-hidden flex-col justify-between p-12">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 relative overflow-hidden flex-col justify-between p-12">
         {/* Subtle grid background */}
-        <div className="absolute inset-0 opacity-5"
+        <div className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
             backgroundSize: '40px 40px'
@@ -65,21 +65,27 @@ const LoginPage = () => {
         />
 
         <div className="relative z-10">
-          <div className="flex items-center gap-3 mb-16">
-            <div className="w-10 h-10 bg-sky-500 rounded-xl flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
+          <div className="flex items-center gap-3 mb-12">
+            <div className="w-12 h-12 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+              <GraduationCap className="w-7 h-7 text-white" />
             </div>
-            <span className="text-xl font-bold text-white tracking-tight">CampusHire</span>
+            <div>
+              <span className="text-xl font-black text-white tracking-tight block">DKTE Placements</span>
+              <span className="text-xs text-blue-300 font-medium">Training & Placement Cell</span>
+            </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <h1 className="text-4xl font-bold text-white leading-tight tracking-tight">
-                Your placement<br />journey starts here.
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                Autonomous Institute · Ichalkaranji
+              </span>
+              <h1 className="text-4xl font-extrabold text-white leading-tight tracking-tight mt-4">
+                DKTE Society's<br />Textile & Engineering Institute
               </h1>
             </motion.div>
 
@@ -87,9 +93,9 @@ const LoginPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-slate-400 text-lg leading-relaxed"
+              className="text-slate-300 text-base leading-relaxed max-w-md"
             >
-              Smart College Placement Management System connecting students, recruiters, and placement officers.
+              Centralized campus hiring platform managing verified student profiles, department eligibility evaluations, and placement drives for TCS, Hexaware, Capgemini, and premier recruiters.
             </motion.p>
           </div>
 

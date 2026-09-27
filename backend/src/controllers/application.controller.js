@@ -1,5 +1,9 @@
 const { Application, Student, Job, Company, Interview } = require("../models");
 const { evaluateEligibility } = require("../services/eligibility.service");
+const {
+  sendApplicationSubmittedEmail,
+  sendApplicationStatusUpdateEmail,
+} = require("../services/email.service");
 
 /**
  * POST /api/jobs/:jobId/apply
@@ -67,6 +71,18 @@ const applyForJob = async (req, res) => {
       status: "APPLIED",
       appliedAt: new Date(),
     });
+
+    // Trigger async email notification
+    (async () => {
+      try {
+        const company = await Company.findByPk(job.companyId);
+        if (student.email) {
+          await sendApplicationSubmittedEmail(student, job, company || { name: "Recruiting Company" });
+        }
+      } catch (err) {
+        console.error("Email notification error on apply:", err.message);
+      }
+    })();
 
     res.status(201).json({
       success: true,
@@ -202,6 +218,26 @@ const updateApplicationStatus = async (req, res) => {
     }
 
     await application.save();
+
+    // Trigger async email notification on status change (Shortlisted, Rejected, etc.)
+    (async () => {
+      try {
+        const student = await Student.findByPk(application.studentId);
+        const job = await Job.findByPk(application.jobId);
+        if (student && student.email && job) {
+          const company = await Company.findByPk(job.companyId);
+          await sendApplicationStatusUpdateEmail(
+            student,
+            job,
+            company || { name: "Recruiting Company" },
+            status,
+            req.body.feedback || req.body.note || ""
+          );
+        }
+      } catch (err) {
+        console.error("Email notification error on status update:", err.message);
+      }
+    })();
 
     res.json({
       success: true,
