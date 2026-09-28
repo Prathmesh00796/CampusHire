@@ -153,7 +153,7 @@ const register = async (req, res) => {
         phone: phone || "9876543210",
         branch: branch || "Computer Science and Engineering",
         degree: degree || "B.Tech",
-        graduationYear: parseInt(graduationYear) || 2025,
+        graduationYear: parseInt(graduationYear) || 2027,
         cgpa: parseFloat(cgpa) || 7.0,
         backlogs: parseInt(backlogs) || 0,
         skills: parsedSkills,

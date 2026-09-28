@@ -15,7 +15,7 @@ const StudentProfile = () => {
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [form, setForm] = useState({
     fullName: '', phone: '', branch: '', degree: 'B.Tech',
-    graduationYear: 2025, cgpa: 0, backlogs: 0, skills: [] as string[],
+    graduationYear: 2027, cgpa: 0, backlogs: 0, skills: [] as string[],
   });
   const [newSkill, setNewSkill] = useState('');
 

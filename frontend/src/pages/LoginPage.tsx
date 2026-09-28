@@ -125,7 +125,7 @@ const LoginPage = () => {
           transition={{ delay: 0.4 }}
           className="relative z-10 text-slate-500 text-sm"
         >
-          © 2025 CampusHire. Smart Placement Management.
+          © 2027 CampusHire. Smart Placement Management.
         </motion.div>
       </div>
 

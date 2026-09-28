@@ -23,7 +23,7 @@ const AdminJobs = () => {
     companyId: '', title: '', description: '', location: '', employmentType: 'Full-time',
     package: '', minimumCGPA: '6.0', maximumBacklogs: '0',
     eligibleBranches: [] as string[], requiredSkills: [] as string[],
-    graduationYear: '2025', applicationDeadline: '', status: 'OPEN',
+    graduationYear: '2027', applicationDeadline: '', status: 'OPEN',
   };
   const [form, setForm] = useState(emptyForm);
 

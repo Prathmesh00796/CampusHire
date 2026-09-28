@@ -22,7 +22,7 @@ const RegisterPage = () => {
     studentCode: '',
     branch: 'Computer Science and Engineering',
     degree: 'B.Tech',
-    graduationYear: '2025',
+    graduationYear: '2027',
     cgpa: '',
     backlogs: '0',
     phone: '',
@@ -254,9 +254,9 @@ const RegisterPage = () => {
                       onChange={(e) => setFormData({ ...formData, graduationYear: e.target.value })}
                       className="input text-sm w-full bg-white"
                     >
-                      <option value="2025">2025</option>
-                      <option value="2026">2026</option>
                       <option value="2027">2027</option>
+                      <option value="2026">2026</option>
+                      <option value="2028">2028</option>
                     </select>
                   </div>
                 </div>
