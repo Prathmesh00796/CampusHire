@@ -31,6 +31,10 @@ pnpm-debug.log*
 coverage/
 .nyc_output/
 
-# Temporary files
+# Temporary files & keys
 *.tmp
 *.bak
+*.pem
+*.key
+*.tar.gz
+
