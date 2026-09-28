@@ -130,12 +130,18 @@ const updateStudent = async (req, res) => {
       });
     }
 
-    const updatableFields = [
-      "fullName", "phone", "branch", "degree", "graduationYear",
+    // Role-based field restrictions:
+    // Students can ONLY update phone, skills, resumeUrl, and profileImage.
+    // Academic fields (fullName, studentCode, branch, degree, graduationYear, cgpa, backlogs) are locked and editable ONLY by ADMIN.
+    const studentEditableFields = ["phone", "skills", "resumeUrl", "profileImage"];
+    const adminEditableFields = [
+      "fullName", "studentCode", "phone", "branch", "degree", "graduationYear",
       "cgpa", "backlogs", "skills", "resumeUrl", "profileImage",
     ];
 
-    updatableFields.forEach((field) => {
+    const allowedFields = req.user.role === "ADMIN" ? adminEditableFields : studentEditableFields;
+
+    allowedFields.forEach((field) => {
       if (req.body[field] !== undefined) {
         student[field] = req.body[field];
       }
@@ -145,10 +151,13 @@ const updateStudent = async (req, res) => {
 
     res.json({
       success: true,
-      message: "Student profile updated successfully.",
+      message: req.user.role === "ADMIN"
+        ? "Student profile updated successfully by Administrator."
+        : "Profile updated. (Academic records like CGPA and Backlogs are verified and locked by DKTE Placement Cell).",
       data: student,
     });
   } catch (error) {
+    console.error("Error updating student profile:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

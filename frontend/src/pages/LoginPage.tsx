@@ -14,7 +14,6 @@ interface DemoCredential {
 const demoCredentials: DemoCredential[] = [
   { role: 'Student (Prathmesh)', email: 'prathmeshchopade96@gmail.com', password: 'Student@123', color: 'bg-emerald-50 border-emerald-300 hover:border-emerald-500 text-emerald-800' },
   { role: 'Placement Admin', email: 'admin@dkte.ac.in', password: 'Admin@123', color: 'bg-blue-50 border-blue-300 hover:border-blue-500 text-blue-800' },
-  { role: 'Recruiter (TCS)', email: 'recruiter@tcs.com', password: 'Recruiter@123', color: 'bg-purple-50 border-purple-300 hover:border-purple-500 text-purple-800' },
 ];
 
 const LoginPage = () => {

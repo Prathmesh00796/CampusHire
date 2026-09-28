@@ -117,64 +117,133 @@ const StudentProfile = () => {
       </div>
 
       {saveSuccess && (
-        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mb-5 p-3.5 bg-emerald-50 border border-emerald-200 rounded-lg text-sm text-emerald-700 flex items-center gap-2">
-          <span>✅</span> Profile updated successfully!
+        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mb-5 p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-700 flex items-center gap-2 shadow-xs">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+          <span>Profile updated successfully! Technical skills updated for job eligibility matching.</span>
         </motion.div>
       )}
 
+      {/* Verified Academic Record (Read-Only) */}
+      <div className="card p-6 border-slate-200 bg-white shadow-xs space-y-4">
+        <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 bg-amber-50 text-amber-600 rounded-lg border border-amber-200/60">
+              <Lock className="w-4 h-4" />
+            </span>
+            <div>
+              <h2 className="text-sm font-bold text-slate-800 uppercase tracking-wider">Verified Academic Record</h2>
+              <p className="text-[11px] text-slate-500">Locked & Verified by DKTE Placement Administration</p>
+            </div>
+          </div>
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-200">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            Verified DKTE Student
+          </span>
+        </div>
+
+        <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-xs text-slate-600 leading-relaxed">
+          <p>
+            Academic metrics (PRN, Department, CGPA, and Backlogs) are strictly maintained by the college Training & Placement Cell.
+            <strong className="text-slate-800"> Only Administrators can modify academic records</strong> to prevent recruiter disqualifications.
+          </p>
+        </div>
+
+        {/* Read-Only Academic Tiles */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <div className="p-3.5 bg-slate-50/70 border border-slate-200/70 rounded-xl">
+            <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Candidate Name</div>
+            <div className="text-sm font-bold text-slate-800 mt-0.5">{student?.fullName || form.fullName}</div>
+          </div>
+
+          <div className="p-3.5 bg-slate-50/70 border border-slate-200/70 rounded-xl">
+            <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">PRN / Roll Number</div>
+            <div className="text-sm font-bold font-mono text-blue-700 mt-0.5">{student?.studentCode || '—'}</div>
+          </div>
+
+          <div className="p-3.5 bg-slate-50/70 border border-slate-200/70 rounded-xl">
+            <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Department / Branch</div>
+            <div className="text-sm font-semibold text-slate-800 mt-0.5">{student?.branch || form.branch}</div>
+          </div>
+
+          <div className="p-3.5 bg-slate-50/70 border border-slate-200/70 rounded-xl">
+            <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Degree & Passing Year</div>
+            <div className="text-sm font-semibold text-slate-800 mt-0.5">
+              {student?.degree || 'B.Tech'} · Class of {student?.graduationYear || 2027}
+            </div>
+          </div>
+
+          <div className="p-3.5 bg-emerald-50/60 border border-emerald-200/70 rounded-xl">
+            <div className="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">Cumulative CGPA</div>
+            <div className="text-lg font-extrabold text-emerald-800 mt-0.5">
+              {student?.cgpa !== undefined ? parseFloat(String(student.cgpa)).toFixed(2) : '—'} <span className="text-xs font-normal text-emerald-600">/ 10.00</span>
+            </div>
+          </div>
+
+          <div className="p-3.5 bg-slate-50/70 border border-slate-200/70 rounded-xl">
+            <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Active Backlogs</div>
+            <div className="text-sm font-bold text-slate-800 mt-1">
+              {student?.backlogs === 0 ? (
+                <span className="text-emerald-700 font-semibold">0 (Clear Record)</span>
+              ) : (
+                <span className="text-amber-700 font-semibold">{student?.backlogs} Active</span>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <form onSubmit={handleSave} className="space-y-5">
-        {/* Basic Info */}
+        {/* Contact Information (Editable by Student) */}
         <div className="card p-5 space-y-4">
-          <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Basic Information</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div><label className="label">Full Name</label><input className="input" value={form.fullName} onChange={(e) => setForm({ ...form, fullName: e.target.value })} /></div>
-            <div><label className="label">Phone</label><input className="input" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="9876543210" /></div>
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Contact Information</h2>
+            <span className="text-xs text-slate-400">Editable by student</span>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <label className="label">Branch</label>
-              <select className="select" value={form.branch} onChange={(e) => setForm({ ...form, branch: e.target.value })}>
-                {['CSE', 'AI & ML', 'IT', 'ECE', 'EEE', 'Mechanical', 'Civil', 'Data Science'].map((b) => (
-                  <option key={b}>{b}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="label">Degree</label>
-              <select className="select" value={form.degree} onChange={(e) => setForm({ ...form, degree: e.target.value })}>
-                {['B.Tech', 'B.E.', 'MCA', 'M.Tech', 'BCA', 'B.Sc'].map((d) => <option key={d}>{d}</option>)}
-              </select>
-            </div>
-            <div><label className="label">Grad Year</label><input className="input" type="number" value={form.graduationYear} onChange={(e) => setForm({ ...form, graduationYear: parseInt(e.target.value) })} /></div>
-          </div>
-        </div>
 
-        {/* Academic */}
-        <div className="card p-5 space-y-4">
-          <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Academic Details</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="label">CGPA</label>
-              <input className="input" type="number" step="0.01" min="0" max="10" value={form.cgpa} onChange={(e) => setForm({ ...form, cgpa: parseFloat(e.target.value) })} />
-              <p className="text-xs text-slate-400 mt-1">Out of 10.00</p>
+              <label className="label">Registered Email</label>
+              <input
+                className="input bg-slate-50 text-slate-500 cursor-not-allowed"
+                disabled
+                value={student?.email || user?.email || ''}
+              />
             </div>
             <div>
-              <label className="label">Active Backlogs</label>
-              <input className="input" type="number" min="0" value={form.backlogs} onChange={(e) => setForm({ ...form, backlogs: parseInt(e.target.value) })} />
-              <p className="text-xs text-slate-400 mt-1">Enter 0 if none</p>
+              <label className="label">Contact Phone *</label>
+              <input
+                className="input"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                placeholder="10-digit mobile number"
+                required
+              />
             </div>
           </div>
         </div>
 
-        {/* Skills */}
+        {/* Technical Skills (Editable by Student) */}
         <div className="card p-5 space-y-4">
-          <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Skills</h2>
-          <p className="text-xs text-slate-500">Select all skills you have. These are used for eligibility matching.</p>
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Technical Skills & Portfolio</h2>
+            <span className="text-xs text-sky-600 font-medium">Used for job eligibility matching</span>
+          </div>
+          <p className="text-xs text-slate-500">
+            Select or add skills you are proficient in. Our system matches these skills with criteria for TCS, Hexaware, and Capgemini drives.
+          </p>
 
           <div className="flex flex-wrap gap-2">
             {SKILLS_PRESET.map((s) => (
-              <button key={s} type="button" onClick={() => toggleSkill(s)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${form.skills.includes(s) ? 'bg-sky-500 text-white border-sky-500' : 'bg-white text-slate-600 border-slate-200 hover:border-sky-400'}`}>
+              <button
+                key={s}
+                type="button"
+                onClick={() => toggleSkill(s)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
+                  form.skills.includes(s)
+                    ? 'bg-sky-500 text-white border-sky-500 shadow-xs'
+                    : 'bg-white text-slate-600 border-slate-200 hover:border-sky-400'
+                }`}
+              >
                 {s}
               </button>
             ))}
@@ -182,32 +251,44 @@ const StudentProfile = () => {
 
           <div className="flex gap-2">
             <input
-              className="input flex-1"
-              placeholder="Add custom skill..."
+              className="input flex-1 text-sm"
+              placeholder="Add other skill (e.g. Next.js, Docker, OpenCV)..."
               value={newSkill}
               onChange={(e) => setNewSkill(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addCustomSkill())}
             />
-            <button type="button" onClick={addCustomSkill} className="btn-secondary px-3">
-              <Plus className="w-4 h-4" />
+            <button type="button" onClick={addCustomSkill} className="btn-secondary px-3.5 text-xs font-medium">
+              <Plus className="w-4 h-4" /> Add
             </button>
           </div>
 
           {form.skills.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {form.skills.map((s) => (
-                <span key={s} className="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-medium border border-emerald-200">
-                  {s}
-                  <button type="button" onClick={() => toggleSkill(s)}><X className="w-3 h-3" /></button>
-                </span>
-              ))}
+            <div className="pt-2">
+              <div className="text-xs font-semibold text-slate-500 mb-2">My Selected Skills ({form.skills.length}):</div>
+              <div className="flex flex-wrap gap-2">
+                {form.skills.map((s) => (
+                  <span
+                    key={s}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 bg-sky-50 text-sky-700 rounded-lg text-xs font-semibold border border-sky-200"
+                  >
+                    {s}
+                    <button
+                      type="button"
+                      onClick={() => toggleSkill(s)}
+                      className="text-sky-500 hover:text-sky-800"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  </span>
+                ))}
+              </div>
             </div>
           )}
         </div>
 
-        <button type="submit" disabled={isSaving} className="btn-primary w-full h-11">
+        <button type="submit" disabled={isSaving} className="btn-primary w-full h-11 text-sm font-semibold shadow-md shadow-sky-500/20">
           <Save className="w-4 h-4" />
-          {isSaving ? 'Saving…' : 'Save Profile'}
+          {isSaving ? 'Saving Profile...' : 'Save Skills & Contact'}
         </button>
       </form>
 

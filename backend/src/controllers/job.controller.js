@@ -1,4 +1,4 @@
-const { Job, Company, Student, Application } = require("../models");
+const { Job, Company, Student, Application, Interview, Placement } = require("../models");
 const { evaluateEligibility } = require("../services/eligibility.service");
 
 /**
@@ -114,20 +114,35 @@ const updateJob = async (req, res) => {
       return res.status(404).json({ success: false, message: "Job not found." });
     }
 
-    const updatable = [
-      "title", "description", "location", "employmentType", "package",
-      "minimumCGPA", "maximumBacklogs", "eligibleBranches", "requiredSkills",
-      "graduationYear", "applicationDeadline", "status",
-    ];
+    const {
+      companyId, title, description, location, employmentType, package: pkg,
+      minimumCGPA, maximumBacklogs, eligibleBranches, requiredSkills,
+      graduationYear, applicationDeadline, status,
+    } = req.body;
 
-    updatable.forEach((field) => {
-      if (req.body[field] !== undefined) job[field] = req.body[field];
-    });
+    if (companyId !== undefined) job.companyId = parseInt(companyId);
+    if (title !== undefined) job.title = title;
+    if (description !== undefined) job.description = description;
+    if (location !== undefined) job.location = location;
+    if (employmentType !== undefined) job.employmentType = employmentType;
+    if (pkg !== undefined) job.package = pkg ? parseFloat(pkg) : null;
+    if (minimumCGPA !== undefined) job.minimumCGPA = parseFloat(minimumCGPA);
+    if (maximumBacklogs !== undefined) job.maximumBacklogs = parseInt(maximumBacklogs);
+    if (eligibleBranches !== undefined) job.eligibleBranches = eligibleBranches;
+    if (requiredSkills !== undefined) job.requiredSkills = requiredSkills;
+    if (graduationYear !== undefined) job.graduationYear = graduationYear ? parseInt(graduationYear) : null;
+    if (applicationDeadline !== undefined) job.applicationDeadline = applicationDeadline;
+    if (status !== undefined) job.status = status;
 
     await job.save();
 
-    res.json({ success: true, message: "Job updated successfully.", data: job });
+    const updatedJob = await Job.findByPk(job.id, {
+      include: [{ model: Company, as: "company" }],
+    });
+
+    res.json({ success: true, message: "Job updated successfully.", data: updatedJob });
   } catch (error) {
+    console.error("Error updating job:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
@@ -135,6 +150,7 @@ const updateJob = async (req, res) => {
 /**
  * DELETE /api/jobs/:id
  * Delete a job (Admin only).
+ * Performs safe cascade deletion of dependent applications, interviews, and placements.
  */
 const deleteJob = async (req, res) => {
   try {
@@ -144,10 +160,27 @@ const deleteJob = async (req, res) => {
       return res.status(404).json({ success: false, message: "Job not found." });
     }
 
+    // 1. Find all applications for this job
+    const applications = await Application.findAll({ where: { jobId: job.id } });
+    const appIds = applications.map((a) => a.id);
+
+    // 2. Delete interviews linked to these applications
+    if (appIds.length > 0) {
+      await Interview.destroy({ where: { applicationId: appIds } });
+    }
+
+    // 3. Delete any placement offers recorded for this job
+    await Placement.destroy({ where: { jobId: job.id } });
+
+    // 4. Delete applications for this job
+    await Application.destroy({ where: { jobId: job.id } });
+
+    // 5. Delete the job record itself
     await job.destroy();
 
     res.json({ success: true, message: "Job deleted successfully." });
   } catch (error) {
+    console.error("Error deleting job:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
