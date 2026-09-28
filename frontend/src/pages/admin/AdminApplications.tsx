@@ -20,6 +20,7 @@ const AdminApplications = () => {
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
   const [isLoading, setIsLoading] = useState(true);
   const [updating, setUpdating] = useState<number | null>(null);
+  const [statusMessage, setStatusMessage] = useState<{ text: string; type: 'success' | 'error' } | null>(null);
 
   const load = () => {
     setIsLoading(true);
@@ -44,16 +45,25 @@ const AdminApplications = () => {
     setFiltered(data);
   }, [applications, search, statusFilter]);
 
-  const updateStatus = async (appId: number, status: string) => {
+  const updateStatus = async (appId: number, status: string, studentName?: string) => {
     setUpdating(appId);
+    setStatusMessage(null);
     try {
       await api.patch(`/applications/${appId}/status`, { status });
+      setStatusMessage({
+        text: `Application updated to ${status}. Notification & email alert dispatched to ${studentName || 'student'}!`,
+        type: 'success',
+      });
       load();
     } catch (err: unknown) {
       const axiosErr = err as { response?: { data?: { message?: string } } };
-      alert(axiosErr.response?.data?.message || 'Update failed.');
+      setStatusMessage({
+        text: axiosErr.response?.data?.message || 'Update failed.',
+        type: 'error',
+      });
     } finally {
       setUpdating(null);
+      setTimeout(() => setStatusMessage(null), 6000);
     }
   };
 
@@ -65,6 +75,31 @@ const AdminApplications = () => {
         <h1 className="page-title">Applications</h1>
         <p className="page-subtitle">{applications.length} total applications</p>
       </div>
+
+      {statusMessage && (
+        <div
+          className={`mb-5 p-4 rounded-xl text-sm font-medium border flex items-center justify-between shadow-sm ${
+            statusMessage.type === 'success'
+              ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+              : 'bg-rose-50 text-rose-800 border-rose-200'
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            {statusMessage.type === 'success' ? (
+              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+            ) : (
+              <XCircle className="w-5 h-5 text-rose-600 flex-shrink-0" />
+            )}
+            <span>{statusMessage.text}</span>
+          </div>
+          <button
+            onClick={() => setStatusMessage(null)}
+            className="text-xs font-semibold px-2 py-1 rounded hover:bg-black/5"
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
 
       {/* Filters */}
       <div className="card p-4 mb-5 flex flex-wrap items-center gap-3">
@@ -127,7 +162,7 @@ const AdminApplications = () => {
                             <button
                               key={next}
                               disabled={updating === app.id}
-                              onClick={() => updateStatus(app.id, next)}
+                              onClick={() => updateStatus(app.id, next, app.student?.fullName)}
                               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${next === 'REJECTED' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'bg-sky-50 text-sky-700 hover:bg-sky-100'}`}
                             >
                               {updating === app.id ? '…' : next}

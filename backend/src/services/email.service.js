@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const https = require("https");
 
 // Create transporter
 let transporter = null;
@@ -7,14 +8,18 @@ const getTransporter = async () => {
   if (transporter) return transporter;
 
   if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+    const isGmail = (process.env.SMTP_SERVICE || "gmail").toLowerCase() === "gmail";
     transporter = nodemailer.createTransport({
-      service: process.env.SMTP_SERVICE || "gmail",
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      service: isGmail ? "gmail" : undefined,
+      host: isGmail ? "smtp.gmail.com" : process.env.SMTP_HOST || "smtp.gmail.com",
       port: parseInt(process.env.SMTP_PORT) || 587,
       secure: process.env.SMTP_SECURE === "true",
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     });
     console.log(`📧 Mail transporter configured with account: ${process.env.SMTP_USER}`);
@@ -34,7 +39,6 @@ const getTransporter = async () => {
       });
       console.log(`📧 Ethereal test mail account ready: ${testAccount.user}`);
     } catch (err) {
-      // Fallback to JSON transport
       transporter = nodemailer.createTransport({
         jsonTransport: true,
       });
@@ -45,12 +49,145 @@ const getTransporter = async () => {
 };
 
 /**
- * Base email sender with rich HTML formatting
+ * Send via Resend REST API if RESEND_API_KEY is present
+ */
+const sendViaResend = (apiKey, { to, subject, html, text, from }) => {
+  return new Promise((resolve, reject) => {
+    const payload = JSON.stringify({
+      from: from || "DKTE Placement Cell <onboarding@resend.dev>",
+      to: [to],
+      subject,
+      html,
+      text: text || html.replace(/<[^>]+>/g, ""),
+    });
+
+    const req = https.request(
+      "https://api.resend.com/emails",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(payload),
+        },
+      },
+      (res) => {
+        let body = "";
+        res.on("data", (c) => (body += c));
+        res.on("end", () => {
+          try {
+            const data = JSON.parse(body);
+            if (res.statusCode >= 200 && res.statusCode < 300) {
+              resolve({ success: true, messageId: data.id, provider: "Resend" });
+            } else {
+              reject(new Error(data.message || body));
+            }
+          } catch (e) {
+            reject(new Error(body));
+          }
+        });
+      }
+    );
+
+    req.on("error", reject);
+    req.write(payload);
+    req.end();
+  });
+};
+
+/**
+ * Send via Brevo REST API if BREVO_API_KEY is present
+ */
+const sendViaBrevo = (apiKey, { to, subject, html, fromEmail, fromName }) => {
+  return new Promise((resolve, reject) => {
+    const payload = JSON.stringify({
+      sender: {
+        name: fromName || "DKTE Placement Cell",
+        email: fromEmail || process.env.SMTP_USER || "placement@dkte.ac.in",
+      },
+      to: [{ email: to }],
+      subject,
+      htmlContent: html,
+    });
+
+    const req = https.request(
+      "https://api.brevo.com/v3/smtp/email",
+      {
+        method: "POST",
+        headers: {
+          "api-key": apiKey,
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(payload),
+        },
+      },
+      (res) => {
+        let body = "";
+        res.on("data", (c) => (body += c));
+        res.on("end", () => {
+          try {
+            const data = JSON.parse(body);
+            if (res.statusCode >= 200 && res.statusCode < 300) {
+              resolve({ success: true, messageId: data.messageId, provider: "Brevo" });
+            } else {
+              reject(new Error(data.message || body));
+            }
+          } catch (e) {
+            reject(new Error(body));
+          }
+        });
+      }
+    );
+
+    req.on("error", reject);
+    req.write(payload);
+    req.end();
+  });
+};
+
+/**
+ * Base email sender with multiple provider support and failover
  */
 const sendMail = async ({ to, subject, html, text }) => {
+  // 1. Check Resend API
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const res = await sendViaResend(process.env.RESEND_API_KEY, {
+        to,
+        subject,
+        html,
+        text,
+        from: process.env.SMTP_FROM,
+      });
+      console.log(`📧 [Resend] Dispatched email to ${to}: ${subject}`);
+      return res;
+    } catch (err) {
+      console.error("❌ Resend API delivery error:", err.message);
+    }
+  }
+
+  // 2. Check Brevo API
+  if (process.env.BREVO_API_KEY) {
+    try {
+      const res = await sendViaBrevo(process.env.BREVO_API_KEY, {
+        to,
+        subject,
+        html,
+        fromEmail: process.env.BREVO_SENDER_EMAIL || process.env.SMTP_USER,
+        fromName: "DKTE Placement Cell",
+      });
+      console.log(`📧 [Brevo] Dispatched email to ${to}: ${subject}`);
+      return res;
+    } catch (err) {
+      console.error("❌ Brevo API delivery error:", err.message);
+    }
+  }
+
+  // 3. Nodemailer SMTP (Gmail or custom SMTP)
   try {
     const mailer = await getTransporter();
-    const fromAddress = process.env.SMTP_FROM || `"DKTE Training & Placement Cell" <${process.env.SMTP_USER || "placement@dkte.ac.in"}>`;
+    const fromAddress =
+      process.env.SMTP_FROM ||
+      `"DKTE Training & Placement Cell" <${process.env.SMTP_USER || "placement@dkte.ac.in"}>`;
 
     const info = await mailer.sendMail({
       from: fromAddress,
@@ -70,10 +207,42 @@ const sendMail = async ({ to, subject, html, text }) => {
     }
     console.log(`============================================================\n`);
 
-    return { success: true, messageId: info.messageId, previewUrl: nodemailer.getTestMessageUrl(info) };
+    return {
+      success: true,
+      messageId: info.messageId,
+      previewUrl: nodemailer.getTestMessageUrl(info),
+    };
   } catch (error) {
-    console.error("❌ Failed to send email:", error.message);
+    console.error("❌ Failed to send email via SMTP:", error.message);
     return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Record in-app notification in database for student/admin
+ */
+const recordNotification = async ({ student, title, message, type, subject, html, emailSuccess }) => {
+  try {
+    const { Notification, User } = require("../models");
+    let targetUserId = student.userId;
+    if (!targetUserId && student.email) {
+      const u = await User.findOne({ where: { email: student.email } });
+      if (u) targetUserId = u.id;
+    }
+
+    if (targetUserId) {
+      await Notification.create({
+        userId: targetUserId,
+        title,
+        message,
+        type: type || "INFO",
+        emailSubject: subject,
+        emailHtml: html,
+        emailStatus: emailSuccess ? "SENT" : "PENDING",
+      });
+    }
+  } catch (err) {
+    console.error("Notification record error:", err.message);
   }
 };
 
@@ -105,7 +274,7 @@ const sendApplicationSubmittedEmail = async (student, job, company) => {
         </div>
 
         <p style="color: #475569; font-size: 14px;">
-          You will receive immediate email notifications as your application progresses through shortlisting, interviews, and final offers.
+          You will receive immediate notifications as your application progresses through shortlisting, interviews, and final offers.
         </p>
       </div>
 
@@ -115,7 +284,19 @@ const sendApplicationSubmittedEmail = async (student, job, company) => {
     </div>
   `;
 
-  return await sendMail({ to: student.email, subject, html });
+  const emailResult = await sendMail({ to: student.email, subject, html });
+
+  await recordNotification({
+    student,
+    title: `Applied: ${job.title} at ${company.name}`,
+    message: `Your application for ${job.title} at ${company.name} (₹${job.package} LPA) was received successfully.`,
+    type: "INFO",
+    subject,
+    html,
+    emailSuccess: emailResult.success,
+  });
+
+  return emailResult;
 };
 
 /**
@@ -131,7 +312,7 @@ const sendApplicationStatusUpdateEmail = async (student, job, company, status, n
 
   const subject = isRejected
     ? `Update regarding your application for ${company.name} | DKTE Placements`
-    : `Congratulations! Shortlisted for ${company.name} (${job.title}) | DKTE Placements`;
+    : `🎉 Congratulations! Shortlisted for ${company.name} (${job.title}) | DKTE Placements`;
 
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
@@ -165,7 +346,7 @@ const sendApplicationStatusUpdateEmail = async (student, job, company, status, n
         ${
           !isRejected
             ? `<p style="color: #475569; font-size: 14px;">
-                Please keep your placement portal active and monitor your email for the upcoming interview schedule details.
+                Please keep your placement portal active and monitor your notifications for the upcoming interview schedule details.
               </p>`
             : `<p style="color: #475569; font-size: 14px;">
                 Do not be discouraged. There are multiple upcoming campus drives on the portal for which you are eligible. Keep preparing!
@@ -179,7 +360,21 @@ const sendApplicationStatusUpdateEmail = async (student, job, company, status, n
     </div>
   `;
 
-  return await sendMail({ to: student.email, subject, html });
+  const emailResult = await sendMail({ to: student.email, subject, html });
+
+  await recordNotification({
+    student,
+    title: isRejected ? `Application Update: ${company.name}` : `🎉 Shortlisted: ${company.name}!`,
+    message: isRejected
+      ? `Your application for ${job.title} at ${company.name} has concluded.`
+      : `Congratulations! You have been shortlisted for ${company.name} (${job.title}). Check interview schedules.`,
+    type: isRejected ? "REJECT" : "SUCCESS",
+    subject,
+    html,
+    emailSuccess: emailResult.success,
+  });
+
+  return emailResult;
 };
 
 /**
@@ -227,7 +422,19 @@ const sendInterviewScheduledEmail = async (student, job, company, interview) => 
     </div>
   `;
 
-  return await sendMail({ to: student.email, subject, html });
+  const emailResult = await sendMail({ to: student.email, subject, html });
+
+  await recordNotification({
+    student,
+    title: `Interview Call: ${company.name} (${interview.roundType})`,
+    message: `Interview scheduled on ${dateFormatted} for ${company.name}.`,
+    type: "WARNING",
+    subject,
+    html,
+    emailSuccess: emailResult.success,
+  });
+
+  return emailResult;
 };
 
 /**
@@ -267,7 +474,19 @@ const sendPlacementEmail = async (student, job, company, placement) => {
     </div>
   `;
 
-  return await sendMail({ to: student.email, subject, html });
+  const emailResult = await sendMail({ to: student.email, subject, html });
+
+  await recordNotification({
+    student,
+    title: `🎉 PLACEMENT OFFER: ${company.name} (₹${placement.packageLPA} LPA)`,
+    message: `Congratulations! You have secured a placement offer with ${company.name} for ₹${placement.packageLPA} LPA.`,
+    type: "OFFER",
+    subject,
+    html,
+    emailSuccess: emailResult.success,
+  });
+
+  return emailResult;
 };
 
 /**

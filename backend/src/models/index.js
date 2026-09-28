@@ -6,6 +6,11 @@ const Job = require("./Job");
 const Application = require("./Application");
 const Interview = require("./Interview");
 const Placement = require("./Placement");
+const Notification = require("./Notification");
+
+// ─── User ↔ Notification ───────────────────────────────────────────────────
+User.hasMany(Notification, { foreignKey: "userId", as: "notifications" });
+Notification.belongsTo(User, { foreignKey: "userId", as: "user" });
 
 // ─── User ↔ Student ────────────────────────────────────────────────────────
 User.hasOne(Student, { foreignKey: "userId", as: "student" });
@@ -53,4 +58,5 @@ module.exports = {
   Application,
   Interview,
   Placement,
+  Notification,
 };

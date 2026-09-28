@@ -15,6 +15,7 @@ const applicationRoutes = require("./routes/application.routes");
 const interviewRoutes = require("./routes/interview.routes");
 const placementRoutes = require("./routes/placement.routes");
 const dashboardRoutes = require("./routes/dashboard.routes");
+const notificationRoutes = require("./routes/notification.routes");
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use("/api/applications", applicationRoutes);
 app.use("/api/interviews", interviewRoutes);
 app.use("/api/placements", placementRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 // ─── 404 Handler ───────────────────────────────────────────────────────────
 app.use((req, res) => {

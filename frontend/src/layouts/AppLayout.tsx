@@ -9,6 +9,7 @@ import {
   ChevronRight, GraduationCap, Search,
 } from 'lucide-react';
 import { cn } from '../utils/helpers';
+import NotificationBell from '../components/NotificationBell';
 
 interface NavItem {
   label: string;
@@ -158,7 +159,8 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
               <p className="text-[11px] text-slate-400 hidden sm:block">An Autonomous Institute · Training & Placement Assistance Portal</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 text-xs text-slate-500 font-medium">
+          <div className="flex items-center gap-3">
+            <NotificationBell />
           </div>
         </header>
 
