@@ -159,10 +159,6 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
           <div className="flex items-center gap-3 text-xs text-slate-500 font-medium">
-            <span className="hidden md:inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full border border-emerald-100 font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              2024-2025 Placement Drive Active
-            </span>
           </div>
         </header>
 
